@@ -1,0 +1,229 @@
+{
+ "questions": [
+  {
+   "id": "crcst-2-01",
+   "exam": "crcst",
+   "domain": "2",
+   "ref": "2.V.D",
+   "q": "Before cleaning, how should hinged instruments such as clamps be placed?",
+   "options": [
+    "Closed and locked to protect the tips",
+    "Closed and held with a rubber band",
+    "Open, in the unlocked position",
+    "Under the heaviest items in the basket"
+   ],
+   "answer": 2,
+   "explain": "Box locks, serrations and jaws can only be reached by brushes, water and detergent when the instrument is open. Locked instruments trap soil in the hinge, which then survives cleaning and blocks sterilization."
+  },
+  {
+   "id": "crcst-2-02",
+   "exam": "crcst",
+   "domain": "2",
+   "ref": "2.I.E",
+   "q": "Why should soiled instruments be kept moist from the point of use until cleaning?",
+   "options": [
+    "Moisture sterilizes them on the way",
+    "Dried blood and soil are much harder to remove",
+    "Wet instruments are lighter to transport",
+    "Dry instruments set off the washer alarm"
+   ],
+   "answer": 1,
+   "explain": "Soil that dries on instruments sticks to surfaces and in lumens and is far harder to clean. Point of use care removes gross soil and keeps items moist, for example with a product made for that purpose, until they reach decontamination."
+  },
+  {
+   "id": "crcst-2-03",
+   "exam": "crcst",
+   "domain": "2",
+   "ref": "2.V.H",
+   "q": "How does an ultrasonic cleaner remove soil?",
+   "options": [
+    "Cavitation: tiny bubbles form and implode on the surface",
+    "High heat that melts the soil away",
+    "Steam under pressure",
+    "A chemical that sterilizes the surface while it soaks in the tank"
+   ],
+   "answer": 0,
+   "explain": "Sound waves create tiny bubbles that collapse against the instrument and loosen fine soil from crevices and hinges. Ultrasonic cleaning comes after gross soil is removed and does not disinfect or sterilize the items."
+  },
+  {
+   "id": "crcst-2-04",
+   "exam": "crcst",
+   "domain": "2",
+   "ref": "2.VI.B",
+   "q": "Under the Spaulding classification, an item that enters sterile tissue is what kind of item?",
+   "options": [
+    "Semi-critical, so high-level disinfection is enough",
+    "Non-critical, so low-level disinfection is enough",
+    "Non-critical, so cleaning alone is enough",
+    "Critical, so it must be sterilized"
+   ],
+   "answer": 3,
+   "explain": "Spaulding sorts items by the risk of infection from their use. Critical items enter sterile tissue or the vascular system and must be sterile. Semi-critical and non-critical items need high-level and low-level disinfection respectively."
+  },
+  {
+   "id": "crcst-2-05",
+   "exam": "crcst",
+   "domain": "2",
+   "ref": "2.VI.B",
+   "q": "An item that touches mucous membranes or non-intact skin is classified as what?",
+   "options": [
+    "Critical",
+    "Non-critical",
+    "Semi-critical",
+    "Environmental surface"
+   ],
+   "answer": 2,
+   "explain": "Semi-critical items contact mucous membranes or broken skin without entering sterile tissue. They need at least high-level disinfection, and sterilization is preferred when the item can tolerate it."
+  },
+  {
+   "id": "crcst-2-06",
+   "exam": "crcst",
+   "domain": "2",
+   "ref": "2.VI.B",
+   "q": "A blood pressure cuff that only touches intact skin falls in which Spaulding class?",
+   "options": [
+    "Critical",
+    "Non-critical",
+    "Semi-critical",
+    "Implantable"
+   ],
+   "answer": 1,
+   "explain": "Items that touch only intact skin are non-critical. Intact skin is an effective barrier, so cleaning and low-level disinfection are enough for them."
+  },
+  {
+   "id": "crcst-2-07",
+   "exam": "crcst",
+   "domain": "2",
+   "ref": "2.V.E",
+   "q": "How should an instrument be brushed in the sink to limit aerosols?",
+   "options": [
+    "Under the surface of the cleaning solution",
+    "Above the water line, quickly",
+    "Under hot running tap water",
+    "In the air, then dipped in the sink"
+   ],
+   "answer": 0,
+   "explain": "Brushing below the waterline keeps splashes and aerosols that carry microorganisms in the sink. Brushing above the surface or under running water spreads contaminated droplets toward the technician and the room."
+  },
+  {
+   "id": "crcst-2-08",
+   "exam": "crcst",
+   "domain": "2",
+   "ref": "2.II.C",
+   "q": "Why must detergent be diluted exactly as its instructions for use say?",
+   "options": [
+    "Stronger solutions always clean better",
+    "Dilution only changes the smell",
+    "The dilution only sets the sterilization time for the next step",
+    "A wrong dilution leaves soil or residue and harms instruments"
+   ],
+   "answer": 3,
+   "explain": "Detergents are tested at the dilution and temperature their manufacturer states. Too weak, soil stays behind; too strong, residues remain and some instruments can stain or corrode. Measuring tools and automatic dosing exist for that reason."
+  },
+  {
+   "id": "crcst-2-09",
+   "exam": "crcst",
+   "domain": "2",
+   "ref": "2.I.F",
+   "q": "Which personal protective equipment is expected for manual cleaning in decontamination?",
+   "options": [
+    "Clean scrubs, a hair cover and closed shoes, nothing more",
+    "A lab coat and safety shoes",
+    "Fluid-resistant gown, gloves, and face and eye protection",
+    "A surgical mask alone"
+   ],
+   "answer": 2,
+   "explain": "Manual cleaning can splash blood, body fluids and chemicals. A fluid-resistant gown, gloves suited to the task and face and eye protection guard the skin, eyes, nose and mouth, as the bloodborne pathogens rules require."
+  },
+  {
+   "id": "crcst-2-10",
+   "exam": "crcst",
+   "domain": "2",
+   "ref": "2.I.A",
+   "q": "Which federal rule requires employers to protect workers from exposure to blood and body fluids?",
+   "options": [
+    "The FDA device labeling and registration rule",
+    "The OSHA Bloodborne Pathogens Standard",
+    "The HIPAA privacy rule",
+    "The CMS billing rules"
+   ],
+   "answer": 1,
+   "explain": "OSHA's Bloodborne Pathogens Standard, 29 CFR 1910.1030, requires an exposure control plan, protective equipment, training, sharps safety and hepatitis B vaccination offered to exposed workers, which covers decontamination staff."
+  },
+  {
+   "id": "crcst-2-11",
+   "exam": "crcst",
+   "domain": "2",
+   "ref": "2.I.B",
+   "q": "Why is biofilm a problem in instrument reprocessing?",
+   "options": [
+    "It shields microorganisms from cleaning and disinfection",
+    "It makes instruments shine after drying",
+    "It only forms on brand new instruments before their first use",
+    "Sterilization alone always removes it"
+   ],
+   "answer": 0,
+   "explain": "Biofilm is a layer of microorganisms held in a sticky matrix on wet surfaces, especially inside lumens. It protects them from detergents and disinfectants, so prompt and thorough cleaning that prevents it from forming matters."
+  },
+  {
+   "id": "crcst-2-12",
+   "exam": "crcst",
+   "domain": "2",
+   "ref": "2.III.A",
+   "q": "How is the cleaning performance of a washer disinfector checked?",
+   "options": [
+    "By weighing the load after the cycle",
+    "By the color of the detergent",
+    "By listening to the spray arms turn and timing the full cycle",
+    "With a cleaning test run as the IFU and policy require"
+   ],
+   "answer": 3,
+   "explain": "Washers, ultrasonic cleaners and cart washers are checked with efficacy tests at the frequency set by the manufacturer's instructions and department policy. The results are documented, and a failed test means the equipment is checked before further use."
+  },
+  {
+   "id": "crcst-2-13",
+   "exam": "crcst",
+   "domain": "2",
+   "ref": "2.V.A",
+   "q": "A single-use device arrives in decontamination mixed in with a reusable set. What should happen to it?",
+   "options": [
+    "Clean it and add it back to the tray",
+    "Sterilize it twice to be safe",
+    "Discard it or route it as policy says, never reprocess it",
+    "Return it to the vendor without a label or a record of the case"
+   ],
+   "answer": 2,
+   "explain": "Single-use devices are not designed to be cleaned and sterilized by the facility. They are discarded or, if the facility has a contract, sent to an approved third-party reprocessor under its policy."
+  },
+  {
+   "id": "crcst-2-14",
+   "exam": "crcst",
+   "domain": "2",
+   "ref": "2.V.F",
+   "q": "Which water is generally used for the final rinse of critical devices?",
+   "options": [
+    "Utility tap water only",
+    "Critical water, treated to remove contaminants",
+    "Water from the hand washing sink, filtered through a clean towel",
+    "Water collected from the ice machine"
+   ],
+   "answer": 1,
+   "explain": "Water quality is matched to each step. Utility water is used for flushing and washing, while the final rinse of critical and semi-critical devices uses critical water, treated so that it does not leave microorganisms, endotoxins or minerals behind."
+  },
+  {
+   "id": "crcst-2-15",
+   "exam": "crcst",
+   "domain": "2",
+   "ref": "2.VI.D",
+   "q": "What is the minimum effective concentration (MEC) test of a reused high-level disinfectant for?",
+   "options": [
+    "Confirming the solution is still strong enough to use",
+    "Measuring the temperature of the solution in the soaking basin",
+    "Counting how many items were soaked",
+    "Setting the exposure time"
+   ],
+   "answer": 0,
+   "explain": "Reusable high-level disinfectants weaken with use and dilution. The test strip checks that the concentration is still above its minimum before use, at the frequency in the instructions; a failed test means the solution is discarded and the result is recorded."
+  }
+ ]
+}

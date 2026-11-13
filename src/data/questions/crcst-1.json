@@ -1,0 +1,184 @@
+{
+ "questions": [
+  {
+   "id": "crcst-1-01",
+   "exam": "crcst",
+   "domain": "1",
+   "ref": "1.I.A",
+   "q": "Compared with the areas next to it, which air pressure is expected in the decontamination room?",
+   "options": [
+    "Positive pressure, so air flows out of the room",
+    "Negative pressure, so air flows into the room",
+    "Neutral pressure, with the doors propped open",
+    "Positive pressure, but only while washers run"
+   ],
+   "answer": 1,
+   "explain": "Decontamination is the dirtiest area of the department. Keeping it at negative pressure means air flows in from the clean side and contaminated aerosols do not drift toward packaging or sterile storage, which are kept at positive pressure."
+  },
+  {
+   "id": "crcst-1-02",
+   "exam": "crcst",
+   "domain": "1",
+   "ref": "1.I.A",
+   "q": "Which work area is normally kept at positive air pressure compared with its surroundings?",
+   "options": [
+    "Preparation and packaging",
+    "Decontamination",
+    "The soiled utility room",
+    "The case cart return area"
+   ],
+   "answer": 0,
+   "explain": "Clean areas such as preparation and packaging and sterile storage are kept at positive pressure so air flows out of them, keeping dust and contaminants away from clean items. Decontamination and soiled rooms are the negative pressure areas."
+  },
+  {
+   "id": "crcst-1-03",
+   "exam": "crcst",
+   "domain": "1",
+   "ref": "1.II.B",
+   "q": "What does one-way workflow mean in a sterile processing department?",
+   "options": [
+    "Staff may only walk clockwise around the department",
+    "Carts must leave by the door they came in",
+    "Sterile items return to decontamination for a final check",
+    "Items move from dirty to clean to sterile and never go back"
+   ],
+   "answer": 3,
+   "explain": "One-way workflow keeps soiled, clean and sterile items apart. Instruments travel from decontamination to preparation and packaging, then to sterilization and sterile storage, so a clean item never crosses the path of a soiled one."
+  },
+  {
+   "id": "crcst-1-04",
+   "exam": "crcst",
+   "domain": "1",
+   "ref": "1.II.A",
+   "q": "A technician moves from decontamination to the packaging area. What should come first?",
+   "options": [
+    "Keep the gown on to save time between rooms",
+    "Change only the outer pair of gloves",
+    "Take off the decontamination PPE and perform hand hygiene",
+    "Spray the gown with disinfectant and carry on"
+   ],
+   "answer": 2,
+   "explain": "Protective attire worn in decontamination is considered contaminated. It is removed before leaving the area and hands are cleaned, so soil and microorganisms are not carried into the clean work zone."
+  },
+  {
+   "id": "crcst-1-05",
+   "exam": "crcst",
+   "domain": "1",
+   "ref": "1.II.A",
+   "q": "Why do sterile processing dress codes restrict artificial nails?",
+   "options": [
+    "They slow typing on the tracking terminals",
+    "They can harbor microorganisms and tear gloves",
+    "Every state law bans them by name",
+    "They interfere with the heat sealer settings"
+   ],
+   "answer": 1,
+   "explain": "Artificial and long nails are hard to clean, can hold microorganisms under and around them, and can puncture gloves. Dress codes based on industry standards limit them for that reason, along with jewelry."
+  },
+  {
+   "id": "crcst-1-06",
+   "exam": "crcst",
+   "domain": "1",
+   "ref": "1.I.D",
+   "q": "Where do you find the hazards, required PPE and spill steps for a cleaning chemical?",
+   "options": [
+    "Its safety data sheet (SDS)",
+    "The instrument count sheet of the tray it is used on",
+    "The sterilizer printout",
+    "The tray label"
+   ],
+   "answer": 0,
+   "explain": "Every hazardous chemical comes with a safety data sheet that lists its hazards, the protective equipment to wear, first aid and spill and disposal steps. Staff should know where the safety data sheets are kept before using a product."
+  },
+  {
+   "id": "crcst-1-07",
+   "exam": "crcst",
+   "domain": "1",
+   "ref": "1.IV.C",
+   "q": "Why are sterilizer records and quality test results kept for a set period?",
+   "options": [
+    "Insurers set instrument prices from them",
+    "They replace the manufacturer's instructions",
+    "They are used to set technicians' pay",
+    "They support recalls and serve as legal records"
+   ],
+   "answer": 3,
+   "explain": "Records of loads, tests and maintenance let the department trace which items went through which cycle if a recall is needed, and they are legal documents that surveyors and courts can ask for. Retention periods come from policy and regulations."
+  },
+  {
+   "id": "crcst-1-08",
+   "exam": "crcst",
+   "domain": "1",
+   "ref": "1.V.A",
+   "q": "Which measure is a common quality assurance benchmark in sterile processing?",
+   "options": [
+    "The number of brushes in stock",
+    "The color of the wrapping material",
+    "Tray accuracy found in tray audits",
+    "The length of the break schedule"
+   ],
+   "answer": 2,
+   "explain": "Departments track measures such as tray accuracy in audits, the rate of immediate-use steam sterilization, set turnaround times, case cart accuracy and inventory fill rates. These show where errors happen and whether changes work."
+  },
+  {
+   "id": "crcst-1-09",
+   "exam": "crcst",
+   "domain": "1",
+   "ref": "1.III.B",
+   "q": "How are documents from AAMI and AORN best described?",
+   "options": [
+    "Federal laws that the FDA enforces through inspections",
+    "Industry standards and recommended practices",
+    "State certification exams",
+    "Manufacturer warranties"
+   ],
+   "answer": 1,
+   "explain": "AAMI standards and AORN guidelines are consensus documents written by professional bodies. Facilities, surveyors and courts rely on them, but they are not federal laws. Regulations come from agencies such as the FDA, CMS and OSHA."
+  },
+  {
+   "id": "crcst-1-10",
+   "exam": "crcst",
+   "domain": "1",
+   "ref": "1.III.A",
+   "q": "Which federal agency clears medical devices, including sterilizers, for sale in the United States?",
+   "options": [
+    "The Food and Drug Administration (FDA)",
+    "The Department of Labor",
+    "The Federal Trade Commission (FTC) consumer office",
+    "The Department of Education"
+   ],
+   "answer": 0,
+   "explain": "The FDA regulates medical devices, including sterilizers, chemical and biological indicators and packaging, before they can be sold. CMS sets conditions hospitals must meet to be paid by Medicare and Medicaid, and OSHA covers worker safety."
+  },
+  {
+   "id": "crcst-1-11",
+   "exam": "crcst",
+   "domain": "1",
+   "ref": "1.I.B",
+   "q": "The decontamination room humidity reads outside the department's acceptable range. What is the right first step?",
+   "options": [
+    "Ignore it as long as the washers still run",
+    "Open the doors to the clean side so the air can balance itself",
+    "Turn off the room's exhaust fan",
+    "Report it and follow the facility's corrective action process"
+   ],
+   "answer": 3,
+   "explain": "Temperature, humidity and air flow targets exist for each area. When a reading falls outside the range, the technician reports it so facilities staff can correct it and the department can decide what to do with work in progress, as its policy describes."
+  },
+  {
+   "id": "crcst-1-12",
+   "exam": "crcst",
+   "domain": "1",
+   "ref": "1.II.C",
+   "q": "Which habit reduces back strain when lifting a heavy instrument tray?",
+   "options": [
+    "Bend at the waist with straight legs",
+    "Twist toward the shelf while lifting",
+    "Keep the tray close to the body and lift with the legs",
+    "Hold the tray out at arm's length to keep it off your scrubs"
+   ],
+   "answer": 2,
+   "explain": "Holding a load close to the body and bending the knees rather than the back lowers the strain on the spine. Twisting while lifting and reaching with a heavy tray are common causes of injury in sterile processing."
+  }
+ ]
+}

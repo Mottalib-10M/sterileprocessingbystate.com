@@ -1,0 +1,28 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { AUTHOR_NAME, CONTACT_EMAIL, LAST_UPDATED, SITE_NAMES } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+import { displayDate } from '../../lib/format';
+const lang = 'en';
+---
+<PageLayout title={`Editorial policy of ${SITE_NAMES[lang]}: sources and corrections`} description="Which statutes, rules and certification documents Sterile Processing By State relies on, how its practice questions are written, which sources it refuses and how mistakes are fixed." lang={lang} noindex={true} breadcrumbs={[{ label: 'Editorial policy' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>Editorial and corrections policy</h1>
+    <p>A new sterile processing technician often has a job that depends on being certified within a set number of months. A wrong date or a wrong fee costs money and time, so every rule here points to the text it was read in, and every question to the outline section it was written for.</p>
+    <h2>Who is responsible</h2><p>{AUTHOR_NAME}, reachable at <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
+    <h2>What we read</h2>
+    <ul>
+      <li>state statutes and rules on central service technicians, on the legislature, revisor or health department sites, or on a public copy when the official site cannot be read, which is then named;</li>
+      <li>health department letters that explain a law's scope or start date;</li>
+      <li>bill pages for proposals that have not become law, labelled as such;</li>
+      <li>the documents of the two certification bodies: HSPA's handbook, outline, certification and statistics pages; the CBSPD's technician page, candidate bulletin, recertification and statistics pages.</li>
+    </ul>
+    <h2>How the questions are written</h2><p>Each question takes one point of the CRCST outline and builds a short work situation of our own, with four options, one right answer and an explanation. We do not copy questions from prep companies, books, flash-card sites or the real exam, and we never claim a question is from the real exam.</p>
+    <h2>Sources we refuse</h2><p>Schools, prep sites, forums and job boards never supply a rule or a fee here. Search results claiming that only two states require certification are an example of why: they are years out of date.</p>
+    <h2>No clinical or salary content</h2><p>The questions are about reprocessing instruments for the exam, not about treating patients. The site does not publish pay figures.</p>
+    <h2>Review cycle</h2><p>State texts, fees and exam dates are read again when a body publishes a new handbook or bulletin, when a legislature passes a bill, and at least every three months. A law that takes effect later is shown with its date, never as current.</p>
+    <h2>Corrections</h2>
+    <ol><li>We read the source again.</li><li>We correct the parameter file or the question and add a test for the case.</li><li>The site rebuilds and every page shows the new date.</li></ol>
+    <h2>Independence</h2><p>No certification body, school or employer pays for or reviews what is published, and there is no affiliate link. See the <a href={route('method', lang)}>method page</a>. Version of <time datetime={LAST_UPDATED}>{displayDate(LAST_UPDATED, 'en-US')}</time>.</p>
+  </div>
+</PageLayout>

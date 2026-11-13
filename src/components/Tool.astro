@@ -1,0 +1,36 @@
+---
+/**
+ * Renders one tool with its page defaults. Quizzes draw their first questions here, at build time,
+ * with a seed from the page id (§17.5): the HTML holds real questions, readable without JavaScript.
+ */
+import Quiz from './calc/Quiz';
+import Progress from './calc/Progress';
+import MiniSim from './calc/MiniSim';
+import StateFinder from './calc/StateFinder';
+import { route, hasRoute, type Locale } from '../i18n/routes';
+import { CTA_PAGE } from '../lib/mini-specs';
+import { BANK } from '../lib/banks-build';
+import { buildMock, buildPractice, seedOf, type ExamId } from '../lib/engine/exam';
+import type { ToolDef } from '../lib/guide-types';
+interface Props { tool: ToolDef; lang?: Locale; primary?: boolean; idPrefix?: string; seedKey?: string; title?: string }
+const { tool, lang = 'en', primary = false, idPrefix, seedKey = 'home', title } = Astro.props;
+const props = (tool.props ?? {}) as Record<string, any>;
+const kind = tool.kind;
+const exam = (props.exam ?? 'crcst') as ExamId;
+const mode = (props.mode ?? 'practice') as 'practice' | 'mock' | 'review';
+const domain: string | null = props.domain != null ? String(props.domain) : null;
+const topic: string | null = props.topic != null ? String(props.topic) : null;
+const n = Number(props.n ?? (primary ? 10 : 5));
+const seed = seedOf(`${seedKey}-${kind}-${exam}-${domain ?? ''}-${topic ?? ''}-${mode}`);
+const initial = kind === 'quiz' ? (mode === 'mock' ? buildMock(BANK, exam, seed).qs : mode === 'review' ? [] : buildPractice(BANK, exam, domain, seed, n, topic)) : [];
+const mini = kind.startsWith('mini:') ? kind.slice(5) : null;
+const link = (id?: string) => (id && hasRoute(id, lang) ? route(id, lang) : undefined);
+const numDefaults: Record<string, number> = {};
+for (const [k, v] of Object.entries(props)) if (typeof v === 'number') numDefaults[k] = v;
+const locked = typeof props.locked === 'string' ? String(props.locked).split(',') : [];
+const pre = idPrefix ?? (primary ? 'p' : 'm');
+---
+{kind === 'quiz' && <Quiz client:load exam={exam} mode={mode} domain={domain} topic={topic} n={n} pick={false} initial={initial} seed={seed} idPrefix={pre} secondary={!primary} />}
+{kind === 'progress' && <Progress client:load exam={exam} idPrefix={pre} secondary={!primary} />}
+{kind === 'states' && <StateFinder client:load state={String(props.state ?? 'Pennsylvania')} idPrefix={pre} secondary={!primary} />}
+{mini && <MiniSim client:load kind={mini} href={link(CTA_PAGE[mini])} defaults={numDefaults} idPrefix={pre} title={title} locked={locked} />}

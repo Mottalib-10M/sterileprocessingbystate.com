@@ -1,0 +1,229 @@
+{
+ "questions": [
+  {
+   "id": "crcst-4-01",
+   "exam": "crcst",
+   "domain": "4",
+   "ref": "4.III.A",
+   "q": "What does a Bowie-Dick or dynamic air removal test check?",
+   "options": [
+    "Air removal and steam penetration in a prevacuum cycle",
+    "The temperature of a gravity cycle only",
+    "Whether a load is sterile",
+    "The ethylene oxide concentration in the chamber during exposure"
+   ],
+   "answer": 0,
+   "explain": "Dynamic air removal sterilizers pull air out before steam enters. The test pack shows whether air was removed and steam penetrated evenly; a failure points to air leaks or poor air removal, and the sterilizer is not used until it is fixed."
+  },
+  {
+   "id": "crcst-4-02",
+   "exam": "crcst",
+   "domain": "4",
+   "ref": "4.III.A",
+   "q": "When is a Bowie-Dick test normally run?",
+   "options": [
+    "After the last load of the day, with the chamber fully loaded",
+    "Once a month",
+    "Only after a power outage",
+    "Each day the sterilizer is used, empty, before the first load"
+   ],
+   "answer": 3,
+   "explain": "The test is run daily in an empty chamber before the first processed load, so a problem is found before any items are sterilized. It is also run after installation, relocation or major repairs."
+  },
+  {
+   "id": "crcst-4-03",
+   "exam": "crcst",
+   "domain": "4",
+   "ref": "4.III.A",
+   "q": "Which test directly shows whether a cycle killed highly resistant microorganisms?",
+   "options": [
+    "The external process indicator tape",
+    "The Bowie-Dick test sheet",
+    "A biological indicator",
+    "The cycle printout on its own"
+   ],
+   "answer": 2,
+   "explain": "A biological indicator holds a large number of highly resistant bacterial spores. If none grow after incubation, the cycle was lethal for them; chemical indicators and printouts only show that conditions were reached."
+  },
+  {
+   "id": "crcst-4-04",
+   "exam": "crcst",
+   "domain": "4",
+   "ref": "4.III.A",
+   "q": "Which organism's spores are used in biological indicators for steam sterilization?",
+   "options": [
+    "Bacillus atrophaeus spores",
+    "Geobacillus stearothermophilus",
+    "Escherichia coli",
+    "Staphylococcus aureus (from skin)"
+   ],
+   "answer": 1,
+   "explain": "Spores of Geobacillus stearothermophilus are highly resistant to moist heat, so they challenge steam cycles. Bacillus atrophaeus spores are used for ethylene oxide and dry heat; E. coli and S. aureus are not used as indicators."
+  },
+  {
+   "id": "crcst-4-05",
+   "exam": "crcst",
+   "domain": "4",
+   "ref": "4.III.A",
+   "q": "Why is a control biological indicator from the same lot incubated without being sterilized?",
+   "options": [
+    "To prove the spores were alive and incubation works",
+    "To double the number of tests",
+    "To measure the cycle temperature reached at the drain",
+    "To replace the load printout"
+   ],
+   "answer": 0,
+   "explain": "The control should turn positive. If it does, the spores in that lot were viable and the incubator supported growth, so a negative result in the test indicator really means the spores were killed."
+  },
+  {
+   "id": "crcst-4-06",
+   "exam": "crcst",
+   "domain": "4",
+   "ref": "4.IV.A",
+   "q": "Which steam exposure is typical for wrapped items in a dynamic air removal sterilizer?",
+   "options": [
+    "100°C (212°F) for 4 minutes",
+    "121°C (250°F) for 1 minute",
+    "150°C (302°F) for 60 minutes",
+    "132°C (270°F) for 4 minutes"
+   ],
+   "answer": 3,
+   "explain": "A common prevacuum cycle exposes wrapped instruments at 132°C (270°F) for 4 minutes, followed by drying. Gravity cycles at 121°C (250°F) need far longer exposure. The device and container instructions always decide the cycle."
+  },
+  {
+   "id": "crcst-4-07",
+   "exam": "crcst",
+   "domain": "4",
+   "ref": "4.IV.E",
+   "q": "How does a gravity displacement steam sterilizer remove air?",
+   "options": [
+    "A vacuum pump pulls the air out in several pulses",
+    "Heating elements burn the air off",
+    "Steam pushes the heavier air out through the drain",
+    "The packaging absorbs the air"
+   ],
+   "answer": 2,
+   "explain": "Steam is lighter than air. In a gravity cycle it enters at the top and pushes air down and out through the drain line, which is slower and less thorough than the pulsed vacuum of a dynamic air removal cycle."
+  },
+  {
+   "id": "crcst-4-08",
+   "exam": "crcst",
+   "domain": "4",
+   "ref": "4.IV.B",
+   "q": "Which of these is a low-temperature sterilization method for heat-sensitive devices?",
+   "options": [
+    "Gravity displacement steam sterilization",
+    "Vaporized hydrogen peroxide",
+    "Dry heat",
+    "Prevacuum steam"
+   ],
+   "answer": 1,
+   "explain": "Heat- and moisture-sensitive devices go to low-temperature methods such as vaporized hydrogen peroxide, hydrogen peroxide gas plasma or ethylene oxide. Steam and dry heat are high-temperature methods."
+  },
+  {
+   "id": "crcst-4-09",
+   "exam": "crcst",
+   "domain": "4",
+   "ref": "4.VII.C",
+   "q": "Why must steam-sterilized trays cool on the cart before handling?",
+   "options": [
+    "Touching warm packs can draw in moisture and contaminants",
+    "Cooling raises the level of sterility",
+    "Hot trays weigh more",
+    "The chemical indicator needs time to fade back to its color"
+   ],
+   "answer": 0,
+   "explain": "Warm packages still contain vapor. Handling them or setting them on cold surfaces causes condensation that can wick microorganisms through the packaging, so loads cool on the cart in a low-traffic area for the time policy sets."
+  },
+  {
+   "id": "crcst-4-10",
+   "exam": "crcst",
+   "domain": "4",
+   "ref": "4.VIII.A",
+   "q": "A tray comes out of a steam cycle with water visible on and in the wrap. How is it handled?",
+   "options": [
+    "Dry it with a towel and store it",
+    "Store it on the top shelf to dry",
+    "Let it air-dry in sterile storage",
+    "Treat it as not sterile and reprocess it"
+   ],
+   "answer": 3,
+   "explain": "Moisture can carry microorganisms through the barrier, so a wet pack is considered contaminated. It goes back to be reprocessed, and the cause, such as load configuration, tray weight or a steam problem, is investigated."
+  },
+  {
+   "id": "crcst-4-11",
+   "exam": "crcst",
+   "domain": "4",
+   "ref": "4.VII.F",
+   "q": "Why are loads containing implants held until the biological indicator result is known?",
+   "options": [
+    "Implants need a longer cooling time",
+    "Implants are heavier than other items",
+    "Implants wait for the result that confirms the cycle",
+    "The printout of an implant load is only issued much later"
+   ],
+   "answer": 2,
+   "explain": "Standards call for monitoring every load with an implant with a biological indicator and keeping it in quarantine until the result is negative. Releasing it earlier is an emergency exception that has to be documented."
+  },
+  {
+   "id": "crcst-4-12",
+   "exam": "crcst",
+   "domain": "4",
+   "ref": "4.IX.A",
+   "q": "Which information belongs on a sterilization load label?",
+   "options": [
+    "The technician's home address and phone",
+    "Sterilizer number, load number and date",
+    "The price of the instruments",
+    "The patient's diagnosis"
+   ],
+   "answer": 1,
+   "explain": "Load control labels let every item be traced back to the sterilizer and cycle that processed it. If a load fails, the department can find and recall each package that came from it."
+  },
+  {
+   "id": "crcst-4-13",
+   "exam": "crcst",
+   "domain": "4",
+   "ref": "4.VIII.B",
+   "q": "A biological indicator from a steam load comes back positive. What is the general response?",
+   "options": [
+    "Report it, recall the load per policy and investigate",
+    "Run only a new Bowie-Dick test",
+    "Ignore it if the printout looked fine",
+    "Discard the result and run the next load as planned"
+   ],
+   "answer": 0,
+   "explain": "A positive indicator means the cycle may not have killed the spores. Items from that load and possibly earlier loads are recalled as the policy sets, the sterilizer is checked, and everything is documented before it returns to service."
+  },
+  {
+   "id": "crcst-4-14",
+   "exam": "crcst",
+   "domain": "4",
+   "ref": "4.IV.E",
+   "q": "What is immediate-use steam sterilization (IUSS) meant for?",
+   "options": [
+    "Routine processing of implants",
+    "Saving money on full cycles",
+    "Sterilizing items that will go to later storage",
+    "Urgent needs with no other option, not routine use"
+   ],
+   "answer": 3,
+   "explain": "Immediate-use steam sterilization is for items needed right away, such as an instrument dropped during a case, with the same cleaning first. It is not a shortcut for routine processing, and departments track how often it is used."
+  },
+  {
+   "id": "crcst-4-15",
+   "exam": "crcst",
+   "domain": "4",
+   "ref": "4.VII.A",
+   "q": "After a cycle, what should the operator check on the physical monitors or printout?",
+   "options": [
+    "The color of the wrapping material",
+    "The number of staff on the shift who ran the load",
+    "That time, temperature and pressure were met",
+    "The temperature outside the building"
+   ],
+   "answer": 2,
+   "explain": "The operator reviews the printout or electronic record to confirm each phase reached its set time, temperature and pressure, then initials it. A cycle that did not meet its parameters is not released."
+  }
+ ]
+}

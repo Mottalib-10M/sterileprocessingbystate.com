@@ -1,0 +1,25 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import LegalIdentity from '../../components/LegalIdentity.astro';
+import { CONTACT_EMAIL, LAST_UPDATED, SITE_NAMES } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+import { displayDate } from '../../lib/format';
+const lang = 'en';
+---
+<PageLayout title={`Contact ${SITE_NAMES[lang]}: a fee, a question, an embed`} description="Write to Sterile Processing By State when a state rule, a fee or a date looks out of date, when a practice question seems wrong, or to embed the free state finder on your site." lang={lang} noindex={true} breadcrumbs={[{ label: 'Contact' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>Contact</h1>
+    <p>Email: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. Every message is read by a person.</p>
+    <h2>A fee, a deadline or a state rule has changed</h2>
+    <p>Tell us which one and, if you can, the statute, rule, bill or handbook page that shows the change. We read the source again, update the parameter file and date the change.</p>
+    <h2>A practice question looks wrong</h2>
+    <p>Send its first words. Each question names the outline reference it was written against; if its answer is wrong or ambiguous we rewrite it or take it out.</p>
+    <h2>What we cannot do</h2>
+    <p>We are not HSPA, the CBSPD, Prometric or a state agency. We cannot change an appointment, see an application or rule on whether your job falls under a state law. Please never send a certification number, an ID document or anything about a patient.</p>
+    <h2>Using the state finder on your site</h2>
+    <p>Schools, hospitals and workforce programs can show the state finder in an iframe for free: see the <a href={route('widget', lang)}>embed page</a>.</p>
+    <h2>Publisher</h2>
+    <LegalIdentity lang={lang} />
+    <p>Updated on <time datetime={LAST_UPDATED}>{displayDate(LAST_UPDATED, 'en-US')}</time>.</p>
+  </div>
+</PageLayout>

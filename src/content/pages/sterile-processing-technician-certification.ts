@@ -1,0 +1,29 @@
+import { definePage } from '../../lib/guide-types';
+export default definePage({
+  id: 'sterile-processing-technician-certification', group: 'become', order: 220,
+  tool: { kind: 'mini:ready', props: { mo: 6, h: 250, c: 0 } },
+  mini: { kind: 'mini:passrate', props: { e: 1, yr: 2025 } },
+  related: ['crcst-certification', 'cbspd-certification', 'sterile-processing-certification-cost', 'crcst-pass-rate'],
+  sources: ['hspa_handbook', 'hspa_stats', 'cbspd_tech', 'cbspd_stats'],
+  en: {
+    slug: 'sterile-processing-technician-certification', nav: 'CRCST or CSPDT?', card: 'The two national credentials side by side: eligibility, dates, fees, pass rates, renewal.',
+    title: 'Sterile Processing Technician Certification: CRCST vs CSPDT',
+    description: 'Sterile processing technician certification compared: CRCST and CSPDT eligibility, fees, exam dates, 2025 pass rates and renewal, from the official pages.',
+    h1: 'Sterile processing technician certification: CRCST or CSPDT',
+    intro: 'Sterile processing technician certification means one of two national exams, the CRCST or the CSPDT: enter your experience above to see which you can sit now.',
+    resume: (h) => `Two bodies certify sterile processing technicians in the United States. HSPA, the Healthcare Sterile Processing Association, formerly IAHCSMM, awards the CRCST; it reported ${h.num(h.P.stats.crcst.current)} current CRCST holders at the end of 2025. The CBSPD, the Certification Board for Sterile Processing and Distribution, awards the CSPDT and reported ${h.num(h.P.stats.cspdt.current)} current holders. Every state text that names a credential accepts both. The exams are built alike, ${h.C.items} questions of which ${h.C.scored} count, in ${h.C.minutes} minutes, but they differ in how you qualify, when you can test and how you keep the credential. In 2025, ${h.pc(h.pr('crcst', 2025).rate)} of CRCST candidates passed, against ${h.pc(h.pr('cspdt', 2025).rate)} for the CSPDT. Neither credential is a state license: both are national, issued by private certification bodies, and they follow you from one employer and one state to the next.`,
+    faqs: (h) => [
+      { q: 'Which is better, the CRCST or the CSPDT?', a: 'Neither is better in law: the seven state texts that name a credential accept both. The CRCST is more widespread, can be taken any day, and renews every year; the CSPDT is held four weeks a year and renews every five years.' },
+      { q: 'Can I hold both certifications?', a: 'Yes. Some technicians do, often because an employer named one in a job posting. You pay both exams and keep both renewals, twelve hours a year for one and 100 points over five years for the other. Holding both can make sense if you move between employers that name different credentials.' },
+      { q: 'Which exam has the higher pass rate?', a: `In 2025 the CRCST pass rate was ${h.pc(h.pr('crcst', 2025).rate)} and the CSPDT rate ${h.pc(h.pr('cspdt', 2025).rate)}, from the figures each body published. The candidates differ, so the gap says little about which test is easier. Practice by outline section helps with either, since both cover the same core work.` },
+      { q: 'Is the CRCST the same as the old IAHCSMM certification?', a: 'Yes. IAHCSMM renamed itself the Healthcare Sterile Processing Association, HSPA, and the CRCST is the same credential. Older job postings still use the former name. Both names refer to the same organization, which awards the CRCST and runs its renewals, so a CRCST earned before the change of name stays valid.' },
+    ],
+    body: (h) => `
+<h2>Sterile processing technician certification side by side</h2>
+${h.table(['', 'CRCST', 'CSPDT'], [['Awarded by', 'HSPA', 'CBSPD'], ['To apply', `${h.num(h.C.handsOn.total)} hands-on hours, before or within ${h.C.handsOn.provisionalMonths} months after`, '12 months of work, a course passed with 70, or two other routes'], ['When', `Any day the Prometric center is open, within ${h.C.windowDays} days of approval`, 'Four testing weeks a year'], ['Format', `${h.C.items} questions, ${h.C.scored} scored, ${h.C.minutes / 60} hours`, `${h.D.items} questions, ${h.D.scored} scored, ${h.D.minutes / 60} hours`], ['Fee', h.usd(h.C.fee), `${h.usd(h.D.feeWeb)} on its exam page`], ['Pass mark', 'Set by standard setting, not published as a number', `Scaled score of ${h.D.passScaled}`], ['Renewal', `Every year: ${h.C.renewal.ceHours} CE hours and ${h.usd(h.C.renewal.fee)}`, `Every ${h.D.certYears} years: ${h.D.recertPoints} points and ${h.usd(h.D.recertFee)}`], ['2025 pass rate', h.pc(h.pr('crcst', 2025).rate), h.pc(h.pr('cspdt', 2025).rate)]], `HSPA handbook and statistics, CBSPD technician page, bulletin and statistics, read on ${h.read}.`, ['l', 'l', 'l'])}
+<h2>How to choose</h2>
+<p>Start with what your employer or a job posting names. If either is accepted, the practical questions are timing and upkeep. Someone already working with a manager who will sign hours can sit the CRCST soon. Someone finishing a graded course may prefer the CSPDT, which accepts the course instead of a year of work. Someone who dislikes yearly paperwork may prefer the five-year cycle of the CBSPD. The calculator above checks which route is open to you today.</p>
+<h2>Other credentials you may see</h2>
+<p>Both bodies offer further credentials for later in a career: endoscope reprocessing (HSPA's CER, the CBSPD's CFER), instrument specialist, and leadership or management certifications. Minnesota's law accepts the two endoscope credentials alongside the technician ones. Details of each technician exam are on the ${h.a('crcst-certification', 'CRCST page')} and the ${h.a('cbspd-certification', 'CBSPD page')}.</p>`,
+  },
+});

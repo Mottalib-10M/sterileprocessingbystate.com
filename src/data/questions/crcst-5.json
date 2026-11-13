@@ -1,0 +1,139 @@
+{
+ "questions": [
+  {
+   "id": "crcst-5-01",
+   "exam": "crcst",
+   "domain": "5",
+   "ref": "5.III.B",
+   "q": "Under event-related sterility, a package stays sterile until what?",
+   "options": [
+    "Exactly 30 days after sterilization, whatever happens",
+    "An event such as damage, moisture or a fall",
+    "The end of the calendar year",
+    "It is moved to a different shelf"
+   ],
+   "answer": 1,
+   "explain": "Event-related shelf life holds that sterility depends on what happens to the package, not on time alone. Tears, moisture, a fall or crushing are events that make it non-sterile; products with a stated expiry date still follow it."
+  },
+  {
+   "id": "crcst-5-02",
+   "exam": "crcst",
+   "domain": "5",
+   "ref": "5.III.C",
+   "q": "What does FIFO mean for stock rotation?",
+   "options": [
+    "First in, first out: older stock is used first",
+    "Fill in from outside: new stock goes at the front",
+    "Final inspection, final order",
+    "Fast items first out"
+   ],
+   "answer": 0,
+   "explain": "First in, first out means new stock is placed behind or under existing stock, so the oldest items are used first and fewer of them expire on the shelf."
+  },
+  {
+   "id": "crcst-5-03",
+   "exam": "crcst",
+   "domain": "5",
+   "ref": "5.III.D",
+   "q": "Why are sterile items stored at set distances from floors, ceilings and outside walls?",
+   "options": [
+    "To make them easier to count by sight",
+    "Because the top shelves must stay empty in every hospital",
+    "To keep them warm",
+    "To limit dust, moisture and contamination"
+   ],
+   "answer": 3,
+   "explain": "Floors are cleaned with water and can splash, ceilings carry dust and sprinklers, and outside walls can collect condensation. Standards and fire codes set minimum distances, and solid bottom shelves protect the lowest items."
+  },
+  {
+   "id": "crcst-5-04",
+   "exam": "crcst",
+   "domain": "5",
+   "ref": "5.II.E",
+   "q": "Why are outside shipping cartons removed in a break-out area before supplies go to sterile storage?",
+   "options": [
+    "Cartons are too heavy for the shelves",
+    "Cartons hide the expiry date",
+    "Corrugated cartons carry dust and contaminants",
+    "Cartons must stay on the items for later recalls"
+   ],
+   "answer": 2,
+   "explain": "Shipping boxes travel through warehouses and trucks and shed dust and fibers. Supplies are taken out of them in a break-out area so that only clean inner packaging enters sterile storage."
+  },
+  {
+   "id": "crcst-5-05",
+   "exam": "crcst",
+   "domain": "5",
+   "ref": "5.II.A",
+   "q": "In a periodic automated replenishment (PAR) system, what does the par level set?",
+   "options": [
+    "The price the hospital paid for each item",
+    "The quantity each item is restocked up to",
+    "The sterilization cycle for each item",
+    "The charge to the patient"
+   ],
+   "answer": 1,
+   "explain": "A par level is the stock to keep for each item in an area. Staff count what is left and restock up to that level, which keeps supplies available without overstocking."
+  },
+  {
+   "id": "crcst-5-06",
+   "exam": "crcst",
+   "domain": "5",
+   "ref": "5.IV.C",
+   "q": "How should sterile items be transported between buildings?",
+   "options": [
+    "In closed or covered carts or containers",
+    "On open carts across the parking lot",
+    "Hand-carried under the arm",
+    "Loose in the trunk of a staff car"
+   ],
+   "answer": 0,
+   "explain": "Sterile items leaving the department are protected from dust, weather and handling in closed carts or covered containers that are cleaned between uses. Off-site transport follows the facility's written procedure."
+  },
+  {
+   "id": "crcst-5-07",
+   "exam": "crcst",
+   "domain": "5",
+   "ref": "5.V.E",
+   "q": "A manufacturer issues a product recall. What is the department's role?",
+   "options": [
+    "Wait until an item fails",
+    "Use up the recalled items first, then reorder",
+    "Relabel the items with a new date",
+    "Find, remove and quarantine affected items"
+   ],
+   "answer": 3,
+   "explain": "Sterile processing locates every affected lot in storage, on carts and in departments, takes it out of use, quarantines it and records what was found, so the facility can answer the recall and protect patients."
+  },
+  {
+   "id": "crcst-5-08",
+   "exam": "crcst",
+   "domain": "5",
+   "ref": "5.IV.A",
+   "q": "What is a case cart system?",
+   "options": [
+    "A cart that only carries trash",
+    "A billing system for operating rooms",
+    "Supplies and instruments for one case on one cart",
+    "A cart that sterilizes items as it moves through the hallways"
+   ],
+   "answer": 2,
+   "explain": "Case carts are assembled from a pick list for a specific procedure and sent to the operating room. After the case, the cart returns to decontamination with its soiled instruments."
+  },
+  {
+   "id": "crcst-5-09",
+   "exam": "crcst",
+   "domain": "5",
+   "ref": "5.II.F",
+   "q": "When a sterile package is received, which check comes first?",
+   "options": [
+    "The color of the label and the font used",
+    "Package integrity and its expiry or event status",
+    "The supplier's logo",
+    "The weight of the package compared with the invoice"
+   ],
+   "answer": 1,
+   "explain": "Before storing or issuing a sterile item, staff check that the packaging is intact, dry and sealed and that it has not expired or been compromised. Damaged items are not used."
+  }
+ ]
+}

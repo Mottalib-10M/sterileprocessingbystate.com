@@ -1,0 +1,229 @@
+{
+ "questions": [
+  {
+   "id": "crcst-3-01",
+   "exam": "crcst",
+   "domain": "3",
+   "ref": "3.VI.B",
+   "q": "Where should you write on a paper and plastic peel pouch?",
+   "options": [
+    "On the paper side with a ballpoint pen",
+    "Directly across the heat seal",
+    "On a slip of paper inside the pouch",
+    "On the plastic side, outside the sealed area"
+   ],
+   "answer": 3,
+   "explain": "Ink can soak through the paper side and pens can damage it. The CRCST outline itself cites writing on the plastic side of a peel pouch, with an approved marker or an electronic label."
+  },
+  {
+   "id": "crcst-3-02",
+   "exam": "crcst",
+   "domain": "3",
+   "ref": "3.VI.B",
+   "q": "On a wrapped tray, where does the label information go?",
+   "options": [
+    "Directly on the wrapper with a marker",
+    "On the instruments inside the tray",
+    "On the indicator tape, not on the wrapper",
+    "On a note slipped under the tape"
+   ],
+   "answer": 2,
+   "explain": "Writing on the wrap can damage the barrier material or let ink through. Information goes on the tape or on an approved label, as the outline puts it: write on the tape, not the wrapper."
+  },
+  {
+   "id": "crcst-3-03",
+   "exam": "crcst",
+   "domain": "3",
+   "ref": "3.III.B",
+   "q": "Which check finds breaks in the insulation of laparoscopic instruments?",
+   "options": [
+    "A Bowie-Dick test",
+    "An insulation tester",
+    "A biological indicator",
+    "A leak test of the steam sterilizer chamber"
+   ],
+   "answer": 1,
+   "explain": "Insulated instruments carry electrical current during surgery. A tiny crack in the insulation can let current escape, so insulated instruments are checked with an insulation tester during inspection and removed from service if they fail."
+  },
+  {
+   "id": "crcst-3-04",
+   "exam": "crcst",
+   "domain": "3",
+   "ref": "3.III.D",
+   "q": "When should instruments with moving parts be lubricated?",
+   "options": [
+    "After cleaning, with a product and method the IFU allows",
+    "Before cleaning, to loosen the soil",
+    "Never, because any lubricant always blocks the sterilant",
+    "Only after sterilization"
+   ],
+   "answer": 0,
+   "explain": "Lubricant is applied to clean instruments so it does not trap soil. It must be compatible with the sterilization method and used as the instrument maker's instructions state, usually a water-soluble product."
+  },
+  {
+   "id": "crcst-3-05",
+   "exam": "crcst",
+   "domain": "3",
+   "ref": "3.III.C",
+   "q": "During inspection you find scissors that no longer cut cleanly. What do you do?",
+   "options": [
+    "Put them back in the set and note the problem next time",
+    "Sharpen them on a counter stone",
+    "Send them on to sterile storage",
+    "Pull them from service, tag them and report the repair"
+   ],
+   "answer": 3,
+   "explain": "A damaged or dull instrument should never reach a patient case. It is pulled from the set, tagged, documented and sent for repair or replacement, and the set is completed with a working instrument if one is available."
+  },
+  {
+   "id": "crcst-3-06",
+   "exam": "crcst",
+   "domain": "3",
+   "ref": "3.IV.F",
+   "q": "What does an internal chemical indicator inside a pack show?",
+   "options": [
+    "That the items are sterile, which is proof of sterility",
+    "That the biological test of the load passed",
+    "That conditions inside reached the indicator's set values",
+    "How many times the tray has been used"
+   ],
+   "answer": 2,
+   "explain": "Chemical indicators react to one or more conditions such as time, temperature and sterilant. A pass shows that those conditions reached the inside of the package; it does not prove sterility, which is why loads are also monitored with biological indicators."
+  },
+  {
+   "id": "crcst-3-07",
+   "exam": "crcst",
+   "domain": "3",
+   "ref": "3.IV.F",
+   "q": "Where is an internal chemical indicator placed in a tray?",
+   "options": [
+    "Only on the outside of the wrap",
+    "Where the sterilant has the most trouble reaching",
+    "On top of the lid, where everyone can see it before opening",
+    "Nowhere, trays do not need one"
+   ],
+   "answer": 1,
+   "explain": "An indicator placed in the hardest place for steam or gas to reach gives the most useful information. Every package gets one inside, and the department's policy and the container's instructions say exactly where."
+  },
+  {
+   "id": "crcst-3-08",
+   "exam": "crcst",
+   "domain": "3",
+   "ref": "3.V.C",
+   "q": "Which folds are standard for flat wrapped packages?",
+   "options": [
+    "The square fold and the envelope fold",
+    "The spiral fold and the triangle fold",
+    "The roll fold and the pleat fold",
+    "The tuck fold and the diamond knot"
+   ],
+   "answer": 0,
+   "explain": "Flat wrapping uses the square fold or the envelope fold, done in sequence with two wraps or at once with a bonded double wrap. Both let the package be opened without contaminating its contents."
+  },
+  {
+   "id": "crcst-3-09",
+   "exam": "crcst",
+   "domain": "3",
+   "ref": "3.IV.G",
+   "q": "Why do instrument sets have weight limits?",
+   "options": [
+    "Heavy sets cost more to label",
+    "Sterilizers stop above any set weight",
+    "Weight limits only apply to items packed in peel pouches",
+    "Heavy sets are hard to sterilize and dry and strain staff"
+   ],
+   "answer": 3,
+   "explain": "Large metal masses hold condensate and are hard to dry, and heavy trays injure staff. AAMI guidance commonly cites 25 pounds as the upper limit for a complete instrument tray, container included, and the container's instructions may set less."
+  },
+  {
+   "id": "crcst-3-10",
+   "exam": "crcst",
+   "domain": "3",
+   "ref": "3.IV.C",
+   "q": "What are tip protectors for?",
+   "options": [
+    "Marking which items are sterile",
+    "Holding the count sheet in place inside the tray",
+    "Protecting fine tips and the packaging from damage",
+    "Replacing the chemical indicator"
+   ],
+   "answer": 2,
+   "explain": "Tip protectors keep sharp or fine tips from being damaged and from piercing the packaging. They must let the sterilant through and be approved for the method used, and they should not be too tight."
+  },
+  {
+   "id": "crcst-3-11",
+   "exam": "crcst",
+   "domain": "3",
+   "ref": "3.V.A",
+   "q": "Why must packaging be matched to the sterilization method?",
+   "options": [
+    "Every material suits every method",
+    "Some materials block or absorb certain sterilants",
+    "Only the color differs between methods",
+    "Packaging choice only affects cost"
+   ],
+   "answer": 1,
+   "explain": "Each packaging material is cleared for specific methods. Paper and other cellulose materials, for example, absorb hydrogen peroxide and are not used in hydrogen peroxide systems, which call for compatible pouches and wraps."
+  },
+  {
+   "id": "crcst-3-12",
+   "exam": "crcst",
+   "domain": "3",
+   "ref": "3.V.E",
+   "q": "Before a rigid container is used, which check is essential?",
+   "options": [
+    "Gaskets, filters and latches are intact and in place",
+    "The container is the newest on the shelf",
+    "The lid is the right color for the service",
+    "The container weighs under one pound"
+   ],
+   "answer": 0,
+   "explain": "A rigid container is only a sterile barrier if its gaskets seal, its filters or valves are in place and intact, and its latches close. Damaged parts are replaced as the manufacturer's instructions say before the container is used."
+  },
+  {
+   "id": "crcst-3-13",
+   "exam": "crcst",
+   "domain": "3",
+   "ref": "3.IV.A",
+   "q": "What does the count sheet of an instrument tray give the assembler?",
+   "options": [
+    "The sterilizer cycle time",
+    "The name of the patient",
+    "The selling price of the tray and of each instrument in it",
+    "The list and number of instruments in the set"
+   ],
+   "answer": 3,
+   "explain": "Count sheets list each instrument in the set and how many there should be. The assembler checks every item against the sheet, notes anything missing on the label and the record, and the operating room uses the same list."
+  },
+  {
+   "id": "crcst-3-14",
+   "exam": "crcst",
+   "domain": "3",
+   "ref": "3.II.B",
+   "q": "Why does the assembly area need good lighting and magnification?",
+   "options": [
+    "To dry instruments faster",
+    "To keep the room at positive pressure during the shift",
+    "To spot leftover soil and damage the eye can miss",
+    "To read biological indicator results"
+   ],
+   "answer": 2,
+   "explain": "Inspection is the last chance to catch residual soil, cracks, burrs or pitting before an instrument is packaged. Bright task lighting and lighted magnifiers help technicians find what the naked eye misses."
+  },
+  {
+   "id": "crcst-3-15",
+   "exam": "crcst",
+   "domain": "3",
+   "ref": "3.VI.D",
+   "q": "A vendor's loaned tray arrives for a scheduled case. Which label information matters most?",
+   "options": [
+    "Only the color of the vendor's case",
+    "That it is a loaner, with vendor and implants named",
+    "Nothing, because vendors label everything before delivery",
+    "The surgeon's personal phone number"
+   ],
+   "answer": 1,
+   "explain": "Loaned sets are processed like the facility's own but must be identified as loaners, with the vendor, contents and any implants clearly marked. The outline lists implant and loaned items among the special identifiers on labels."
+  }
+ ]
+}

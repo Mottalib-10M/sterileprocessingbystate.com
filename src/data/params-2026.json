@@ -1,0 +1,663 @@
+{
+ "_lisezmoi": "Every figure of the site lives here, never in a page (MASTERFACTORY §4, §17.4). Each value was read on the source named next to it on retrieved_at. CRCST is a credential of the Healthcare Sterile Processing Association and CSPDT of the Certification Board for Sterile Processing and Distribution; this site is independent of both.",
+ "year": 2026,
+ "retrieved_at": "2026-11-13",
+ "valid_from": "2026-01-01",
+ "valid_to": "2026-12-31",
+ "sources": {
+  "ny_law": {
+   "url": "https://www.nysenate.gov/legislation/laws/PBH/2824",
+   "label": {
+    "en": "New York State Senate, Public Health Law § 2824: central service technicians (added by Chapter 177 of the Laws of 2013)"
+   }
+  },
+  "ny_doh": {
+   "url": "https://www.health.ny.gov/professionals/hospital_administrator/letters/2015/2015-01-20_central_supply.htm",
+   "label": {
+    "en": "New York State Department of Health, letter to hospital CEOs of January 20, 2015: Public Health Law § 2824 in effect January 1, 2015"
+   }
+  },
+  "nj_rule": {
+   "url": "https://www.law.cornell.edu/regulations/new-jersey/N-J-A-C-8-43G-8-2",
+   "label": {
+    "en": "N.J.A.C. 8:43G-8.2, Central service staff qualifications (hospital licensing standards), as amended effective January 16, 2018: unofficial copy published by the Cornell Legal Information Institute, not the official code"
+   }
+  },
+  "ct_law": {
+   "url": "https://www.cga.ct.gov/current/pub/chap_382b.htm",
+   "label": {
+    "en": "Connecticut General Assembly, General Statutes chapter 382b, § 20-185r: central service technicians (P.A. 15-11, P.A. 22-58)"
+   }
+  },
+  "pa_act": {
+   "url": "https://www.palegis.us/statutes/unconsolidated/law-information?sessYr=2020&sessInd=0&actNum=80",
+   "label": {
+    "en": "Pennsylvania General Assembly, Act 80 of 2020: Central Service Technician and Surgical Technologist Regulation Act, enacted October 29, 2020, effective in 60 days"
+   }
+  },
+  "tn_law": {
+   "url": "https://getpocketlaw.com/law/state_tennessee/section-68-11-239-central-service-technician_5decf1baf8c4",
+   "label": {
+    "en": "Tennessee Code Annotated § 68-11-239, Central service technician, current text in an unofficial copy published by PocketLaw (the official code, published for the state by LexisNexis, refused automated reading)"
+   }
+  },
+  "tn_faq": {
+   "url": "https://hpnonline.com/sterile-processing/article/13000780/tennessee-central-service-technician-law-faq",
+   "label": {
+    "en": "Healthcare Purchasing News, Tennessee central service technician law FAQ (HSPA): effective January 1, 2017"
+   }
+  },
+  "de_code": {
+   "url": "https://delcode.delaware.gov/title16/c030a/sc02/index.html",
+   "label": {
+    "en": "Delaware Code, Title 16, Chapter 30A, Subchapter II, §§ 3010A to 3014A: certification of central service technicians"
+   }
+  },
+  "de_act": {
+   "url": "https://legis.delaware.gov/SessionLaws/Chapter?id=41560",
+   "label": {
+    "en": "Laws of Delaware, Volume 83, Chapter 493 (House Bill 279), approved October 21, 2022, effective January 1, 2023"
+   }
+  },
+  "mn_law": {
+   "url": "https://www.revisor.mn.gov/statutes/cite/148.781",
+   "label": {
+    "en": "Minnesota Statutes 2026, section 148.781: central service technician"
+   }
+  },
+  "mn_act": {
+   "url": "https://www.revisor.mn.gov/laws/2025/1/Session+Law/Chapter/3/",
+   "label": {
+    "en": "Laws of Minnesota 2025, First Special Session, chapter 3, article 2, section 33: signed June 14, 2025, effective 180 days after final enactment"
+   }
+  },
+  "fl_bill": {
+   "url": "https://www.flsenate.gov/Session/Bill/2026/1034",
+   "label": {
+    "en": "Florida Senate, SB 1034 (2026 session), central service technicians: died in Health Policy on March 13, 2026"
+   }
+  },
+  "hspa_leg": {
+   "url": "https://myhspa.org/about/advocacy/legislative-certification-issues/",
+   "label": {
+    "en": "HSPA, Legislative certification issues: states that require certification and states with active bills"
+   }
+  },
+  "hspa_handbook": {
+   "url": "https://myhspa.org/wp-content/uploads/2026/08/2026-Certification-Handbook.pdf",
+   "label": {
+    "en": "HSPA Certification Handbook, revised January 2026: CRCST eligibility, 400 hours, exam format, fees, retakes, renewal"
+   }
+  },
+  "hspa_become": {
+   "url": "https://myhspa.org/certification/become-certified/",
+   "label": {
+    "en": "HSPA, Become Certified: application, Prometric testing, 120-day window, courses not required"
+   }
+  },
+  "hspa_crcst": {
+   "url": "https://myhspa.org/certification/crcst/",
+   "label": {
+    "en": "HSPA, Certified Registered Central Service Technician (CRCST): accreditation and renewal requirements"
+   }
+  },
+  "hspa_outline": {
+   "url": "https://myhspa.org/wp-content/uploads/2024/01/HSPA_CRCST_Content_Outline_2023.Revision.pdf",
+   "label": {
+    "en": "HSPA, CRCST Exam Content Outline (2023 job task analysis, revised November 2023): seven sections and their weights"
+   }
+  },
+  "hspa_stats": {
+   "url": "https://myhspa.org/certification/statistics/",
+   "label": {
+    "en": "HSPA, Certification statistics as of December 31, 2025: CRCST passes and fails by year, 2018 to 2025"
+   }
+  },
+  "cbspd_tech": {
+   "url": "https://www.sterileprocessing.org/technician.htm",
+   "label": {
+    "en": "CBSPD, SPD Technician Certification Exam (CSPDT): eligibility, fee, exam facts, 2026 and 2027 exam windows"
+   }
+  },
+  "cbspd_bulletin": {
+   "url": "https://www.cbspd.net/wp-content/uploads/2026/02/Tech-CB-wo-App-2026.pdf",
+   "label": {
+    "en": "CBSPD, Technician candidate bulletin 2026: fees, scoring, content outline, recertification"
+   }
+  },
+  "cbspd_recert": {
+   "url": "https://www.cbspd.net/recertification/",
+   "label": {
+    "en": "CBSPD, Recertification: five-year cycle and annual recertification packets"
+   }
+  },
+  "cbspd_ceu": {
+   "url": "https://www.cbspd.net/about-ceus/",
+   "label": {
+    "en": "CBSPD, Continuing education protocols: 100 or 150 points over five years, one point per contact hour"
+   }
+  },
+  "cbspd_stats": {
+   "url": "https://www.cbspd.net/exam-cert-statistics/",
+   "label": {
+    "en": "CBSPD, Exam and certification statistics 2020 to 2025: candidates, passes and fails by exam"
+   }
+  }
+ },
+ "states": [
+  {
+   "id": "new-york",
+   "name": "New York",
+   "abbr": "NY",
+   "status": "in-force",
+   "instrument": "Statute",
+   "citation": "Public Health Law § 2824",
+   "enacted": "Chapter 177 of the Laws of 2013",
+   "effective": "2015-01-01",
+   "graceMonths": 18,
+   "grandfather": "Worked as a central service technician in a health care facility for a cumulative year within the four years before January 1, 2015",
+   "grandfatherCutoff": null,
+   "credentials": "CRCST or CSPDT, or a substantially equivalent credential from a nationally accredited central service credentialing organization",
+   "ceHours": 10,
+   "ceWho": "Every technician who qualifies by credential or by past employment",
+   "facilities": "General hospitals, and diagnostic and treatment centers authorized to provide ambulatory surgery",
+   "extra": "A facility that cannot find enough qualified technicians after a documented diligent effort may hire someone who does not qualify yet; that person must hold the credential within two years of starting. Endoscope reprocessing by high-level disinfection is outside the law, per the Department of Health letter.",
+   "authority": "New York State Department of Health",
+   "sources": [
+    "ny_law",
+    "ny_doh"
+   ]
+  },
+  {
+   "id": "new-jersey",
+   "name": "New Jersey",
+   "abbr": "NJ",
+   "status": "in-force",
+   "instrument": "Regulation",
+   "citation": "N.J.A.C. 8:43G-8.2",
+   "enacted": "Hospital licensing standards of the New Jersey Department of Health, amended by 50 N.J.R. 552(b)",
+   "effective": "2018-01-16",
+   "effectiveNote": "date of the last amendment of the rule; the certification duty predates it",
+   "graceMonths": 36,
+   "grandfather": null,
+   "grandfatherCutoff": null,
+   "credentials": "Certification through a national sterile processing program recognized by the Department of Health",
+   "ceHours": null,
+   "ceWho": "The rule sets no hours; the certifying body's renewal rules apply",
+   "facilities": "Licensed hospitals",
+   "extra": "The director or supervisor of central service must be full time, have two years of supervisory experience and be certified. Staff who use ethylene oxide need the appropriate license from the Department of Environmental Protection.",
+   "authority": "New Jersey Department of Health",
+   "sources": [
+    "nj_rule"
+   ]
+  },
+  {
+   "id": "connecticut",
+   "name": "Connecticut",
+   "abbr": "CT",
+   "status": "in-force",
+   "instrument": "Statute",
+   "citation": "C.G.S. § 20-185r",
+   "enacted": "Public Act 15-11, amended by Public Act 22-58",
+   "effective": "2016-01-01",
+   "graceMonths": 24,
+   "grandfather": "Employed or contracted as a central service technician by a health care facility before January 1, 2016",
+   "grandfatherCutoff": "2015-12-31",
+   "credentials": "CRCST (HSPA) or CSPDT (CBSPD)",
+   "ceHours": 10,
+   "ceWho": "Every central service technician",
+   "facilities": "Hospitals (chronic disease hospitals excluded) and outpatient surgical facilities",
+   "extra": "Staff outside the central service department may decontaminate or sterilize equipment if the facility's infection prevention committee has trained them and found them competent; the facility keeps a list of them, and they also complete 10 hours of continuing education a year.",
+   "authority": "Connecticut Department of Public Health",
+   "sources": [
+    "ct_law"
+   ]
+  },
+  {
+   "id": "pennsylvania",
+   "name": "Pennsylvania",
+   "abbr": "PA",
+   "status": "in-force",
+   "instrument": "Statute",
+   "citation": "Act 80 of 2020, sections 301 to 304",
+   "enacted": "Act of October 29, 2020, P.L. 710, No. 80 (House Bill 81)",
+   "effective": "2020-12-28",
+   "graceMonths": 18,
+   "grandfather": "Employed or contracted as a central service technician by a health care facility on or before the effective date of the act",
+   "grandfatherCutoff": "2020-12-28",
+   "credentials": "CRCST or CSPDT",
+   "ceHours": 10,
+   "ceWho": "Every technician who qualifies under section 301",
+   "facilities": "Hospitals, ambulatory surgical facilities and freestanding surgical outpatient facilities",
+   "extra": "Health care practitioners, dental assistants and people licensed under the Dental Law, supervised students and interns, and people holding a credential from a nationally accredited body to perform health services may do the work without the certification. The act states it does not apply to facilities owned or operated by the federal government.",
+   "authority": "Pennsylvania Department of Health",
+   "sources": [
+    "pa_act"
+   ]
+  },
+  {
+   "id": "tennessee",
+   "name": "Tennessee",
+   "abbr": "TN",
+   "status": "in-force",
+   "instrument": "Statute",
+   "citation": "Tenn. Code Ann. § 68-11-239",
+   "enacted": "Public Chapter 1004 of 2016, as amended",
+   "effective": "2017-01-01",
+   "graceMonths": 24,
+   "grandfather": "Employed or contracted as a central service technician in a healthcare institution before January 1, 2017",
+   "grandfatherCutoff": "2016-12-31",
+   "credentials": "CRCST (HSPA) or CSPDT (CBSPD)",
+   "ceHours": 10,
+   "ceWho": "Every technician who qualifies under subsection (b)",
+   "facilities": "Hospitals and ambulatory surgical treatment centers",
+   "extra": "Surgical technologists, diagnostic medical sonographers and licensed providers working within their scope are not covered. Staff outside the central service department may be trained and found competent by the infection prevention committee; the institution keeps a list and they complete 10 hours of continuing education a year.",
+   "authority": "Tennessee Department of Health",
+   "sources": [
+    "tn_law",
+    "tn_faq"
+   ]
+  },
+  {
+   "id": "delaware",
+   "name": "Delaware",
+   "abbr": "DE",
+   "status": "in-force",
+   "instrument": "Statute",
+   "citation": "16 Del. C. §§ 3010A to 3014A",
+   "enacted": "83 Del. Laws c. 493 (House Bill 279), approved October 21, 2022",
+   "effective": "2023-01-01",
+   "graceMonths": 18,
+   "grandfather": "Employed or otherwise working as a central service technician in a health care facility as of January 1, 2023",
+   "grandfatherCutoff": "2023-01-01",
+   "credentials": "CRCST or CSPDT",
+   "ceHours": 10,
+   "ceWho": "Every central service technician employed in a health care facility",
+   "facilities": "Hospitals and freestanding surgical centers licensed under Title 16",
+   "extra": "Health care practitioners licensed under Title 24 and supervised students or interns may do the tasks. The facility keeps proof of each technician's certification and date of hire.",
+   "authority": "Delaware Department of Health and Social Services",
+   "sources": [
+    "de_code",
+    "de_act"
+   ]
+  },
+  {
+   "id": "minnesota",
+   "name": "Minnesota",
+   "abbr": "MN",
+   "status": "enacted-future",
+   "instrument": "Statute",
+   "citation": "Minn. Stat. § 148.781",
+   "enacted": "Laws 2025, First Special Session, chapter 3, article 2, section 33, signed June 14, 2025",
+   "effective": "2025-12-11",
+   "bitesFrom": "2028-01-01",
+   "graceMonths": 24,
+   "grandfather": "Employed or retained as a central service technician by a health care facility on or before December 31, 2027",
+   "grandfatherCutoff": "2027-12-31",
+   "credentials": "CRCST, CER, CSPDT or CFER (certified endoscope reprocessor or certified flexible endoscope reprocessor)",
+   "ceHours": 10,
+   "ceWho": "Every technician who qualifies under paragraph (a)",
+   "facilities": "Hospitals and ambulatory surgical centers",
+   "extra": "Because everyone employed on or before December 31, 2027 qualifies by that employment, the certification duty only bites on people hired from January 1, 2028. Health care practitioners, people credentialed by a nationally accredited body to perform health care services, and supervised students or interns are not covered.",
+   "authority": "Minnesota Department of Health",
+   "sources": [
+    "mn_law",
+    "mn_act"
+   ]
+  }
+ ],
+ "otherStates": [
+  "Alabama",
+  "Alaska",
+  "Arizona",
+  "Arkansas",
+  "California",
+  "Colorado",
+  "District of Columbia",
+  "Florida",
+  "Georgia",
+  "Hawaii",
+  "Idaho",
+  "Illinois",
+  "Indiana",
+  "Iowa",
+  "Kansas",
+  "Kentucky",
+  "Louisiana",
+  "Maine",
+  "Maryland",
+  "Massachusetts",
+  "Michigan",
+  "Mississippi",
+  "Missouri",
+  "Montana",
+  "Nebraska",
+  "Nevada",
+  "New Hampshire",
+  "New Mexico",
+  "North Carolina",
+  "North Dakota",
+  "Ohio",
+  "Oklahoma",
+  "Oregon",
+  "Rhode Island",
+  "South Carolina",
+  "South Dakota",
+  "Texas",
+  "Utah",
+  "Vermont",
+  "Virginia",
+  "Washington",
+  "West Virginia",
+  "Wisconsin",
+  "Wyoming"
+ ],
+ "bills": [
+  {
+   "state": "Florida",
+   "what": "SB 1034 (2026 session) would have created section 395.1075 of the Florida Statutes for technicians in hospitals and ambulatory surgical centers",
+   "status": "Died in the Senate Health Policy committee on March 13, 2026",
+   "source": "fl_bill"
+  },
+  {
+   "state": "Oregon",
+   "what": "Listed by HSPA among the states active for legislation or regulation",
+   "status": "No adopted text found",
+   "source": "hspa_leg"
+  },
+  {
+   "state": "South Carolina",
+   "what": "Listed by HSPA among the states active for legislation or regulation",
+   "status": "No adopted text found",
+   "source": "hspa_leg"
+  }
+ ],
+ "exams": {
+  "crcst": {
+   "label": "CRCST",
+   "name": "Certified Registered Central Service Technician",
+   "owner": "Healthcare Sterile Processing Association (HSPA, formerly IAHCSMM)",
+   "ownerShort": "HSPA",
+   "vendor": "Prometric",
+   "items": 150,
+   "scored": 125,
+   "unscored": 25,
+   "minutes": 180,
+   "options": 4,
+   "editionLabel": "CRCST content outline, 2023 job task analysis",
+   "scoring": "One point per correct scored answer; the passing point is set with the Angoff procedure supplemented by the Beuk compromise method and approved by the HSPA Certification Council.",
+   "passText": "HSPA reports pass or fail on screen at the end of the exam; it does not publish the passing point as a number of right answers.",
+   "target": 0.75,
+   "mockItems": 50,
+   "fee": 140,
+   "feeNonRefundable": 25,
+   "feeRetake": 140,
+   "retakeWaitWeeks": 6,
+   "windowDays": 120,
+   "scheduleAheadDays": 45,
+   "processingWeeks": "3 to 4",
+   "refundDays": 30,
+   "handsOn": {
+    "total": 400,
+    "areas": [
+     [
+      "Decontamination",
+      120
+     ],
+     [
+      "Preparing and packaging instruments",
+      120
+     ],
+     [
+      "Sterilization and disinfection",
+      120
+     ],
+     [
+      "Storage and distribution",
+      24
+     ],
+     [
+      "Quality assurance processes",
+      16
+     ]
+    ],
+    "provisionalMonths": 6,
+    "extensionMonths": 2
+   },
+   "renewal": {
+    "everyYears": 1,
+    "ceHours": 12,
+    "fee": 50,
+    "feeWithMembership": 60,
+    "graceWeeks": 6
+   },
+   "domains": [
+    {
+     "code": "1",
+     "name": "Departmental considerations",
+     "short": "Department",
+     "share": 0.15
+    },
+    {
+     "code": "2",
+     "name": "Cleaning, decontamination and disinfection",
+     "short": "Decontamination",
+     "share": 0.21
+    },
+    {
+     "code": "3",
+     "name": "Preparation and packaging",
+     "short": "Packaging",
+     "share": 0.21
+    },
+    {
+     "code": "4",
+     "name": "Sterilization process",
+     "short": "Sterilization",
+     "share": 0.21
+    },
+    {
+     "code": "5",
+     "name": "Sterile storage, transport and inventory management",
+     "short": "Storage",
+     "share": 0.09
+    },
+    {
+     "code": "6",
+     "name": "Patient care equipment and distribution",
+     "short": "Patient care equipment",
+     "share": 0.05
+    },
+    {
+     "code": "7",
+     "name": "Professional development and human relation skills",
+     "short": "Professional skills",
+     "share": 0.08
+    }
+   ]
+  },
+  "cspdt": {
+   "label": "CSPDT",
+   "name": "Certified Sterile Processing and Distribution Technician",
+   "owner": "Certification Board for Sterile Processing and Distribution (CBSPD)",
+   "ownerShort": "CBSPD",
+   "items": 150,
+   "scored": 125,
+   "unscored": 25,
+   "minutes": 180,
+   "passScaled": 70,
+   "feeWeb": 135,
+   "feeBulletin": 128,
+   "feeBulletinLate": 138,
+   "chargebackFee": 75,
+   "changeExamFee": 10,
+   "transferFee": 20,
+   "withdrawFee": 60,
+   "certYears": 5,
+   "recertPoints": 100,
+   "recertFee": 125,
+   "workPoints": {
+    "fullTime": 10,
+    "partTime": 5,
+    "perDiem": 3,
+    "maxPerYear": 10,
+    "maxTotal": 50
+   },
+   "acceptEarlyMonths": 6,
+   "resultsWeeks": 6,
+   "eligibility": [
+    "12 months of full-time employment (or equivalent part-time hours) performing sterile processing activities, signed by your manager",
+    "6 months of full-time employment in a related allied health profession and 6 months performing sterile processing activities, signed by your manager",
+    "A sterile processing technician training course passed with a grade of 70 or higher",
+    "12 months of healthcare product sales or service related to sterile processing, signed by your employer"
+   ],
+   "windows2026": [
+    [
+     "2026-02-02",
+     "2026-02-07",
+     "2026-01-27"
+    ],
+    [
+     "2026-05-04",
+     "2026-05-09",
+     "2026-04-28"
+    ],
+    [
+     "2026-08-03",
+     "2026-08-08",
+     "2026-07-28"
+    ],
+    [
+     "2026-11-02",
+     "2026-11-07",
+     "2026-10-27"
+    ]
+   ],
+   "windows2027": [
+    [
+     "2027-02-01",
+     "2027-02-06",
+     "2027-01-26"
+    ]
+   ],
+   "domains": [
+    [
+     "Roles and responsibilities",
+     0.13
+    ],
+    [
+     "Life science",
+     0.09
+    ],
+    [
+     "Decontamination and disinfection",
+     0.19
+    ],
+    [
+     "Preparation and handling",
+     0.16
+    ],
+    [
+     "Sterilization",
+     0.18
+    ],
+    [
+     "Sterile storage, inventory management and distribution",
+     0.11
+    ],
+    [
+     "Patient care equipment",
+     0.06
+    ],
+    [
+     "Ethics",
+     0.08
+    ]
+   ]
+  }
+ },
+ "stats": {
+  "crcst": {
+   "asOf": "2025-12-31",
+   "years": [
+    [
+     2018,
+     4620,
+     3073
+    ],
+    [
+     2019,
+     6416,
+     1873
+    ],
+    [
+     2020,
+     4530,
+     1403
+    ],
+    [
+     2021,
+     6031,
+     2025
+    ],
+    [
+     2022,
+     6863,
+     2299
+    ],
+    [
+     2023,
+     7996,
+     3132
+    ],
+    [
+     2024,
+     7546,
+     3726
+    ],
+    [
+     2025,
+     10083,
+     5286
+    ]
+   ],
+   "current": 54525,
+   "cumulativeExams": 153765
+  },
+  "cspdt": {
+   "years": [
+    [
+     2020,
+     1839,
+     1074
+    ],
+    [
+     2021,
+     1733,
+     1370
+    ],
+    [
+     2022,
+     1638,
+     1751
+    ],
+    [
+     2023,
+     1873,
+     1879
+    ],
+    [
+     2024,
+     1963,
+     1933
+    ],
+    [
+     2025,
+     1928,
+     2076
+    ]
+   ],
+   "current": 18353
+  }
+ }
+}

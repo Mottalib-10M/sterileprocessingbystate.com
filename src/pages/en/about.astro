@@ -1,0 +1,30 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { LAST_UPDATED, AUTHOR_NAME, CONTACT_EMAIL, AUTHOR_ROLE, SITE_NAMES } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+import { organizationSchema, breadcrumbSchema, profilePageSchema } from '../../lib/seo';
+import { displayDate } from '../../lib/format';
+import { PAGES } from '../../lib/guides';
+import { helpers } from '../../lib/helpers';
+const lang = 'en';
+const h = helpers(lang);
+const n = PAGES.length + 1;
+---
+<PageLayout title="Radif Partners, publisher of Sterile Processing By State" description="Who publishes Sterile Processing By State, how its state rules, calculators and CRCST practice questions are read, written and checked, and what it never sells." lang={lang} jsonLd={[organizationSchema(lang), profilePageSchema({ path: route('about', lang), lang }), breadcrumbSchema([{ name: 'Home', path: route('home', lang) }, { name: 'About', path: route('about', lang) }])]} breadcrumbs={[{ label: 'About' }]}>
+  <header class="mb-6"><p class="mb-1 text-xs font-semibold uppercase tracking-wide text-accent-600">About</p><h1 class="mt-0 text-3xl font-bold text-navy-900 md:text-4xl">Who is behind {SITE_NAMES[lang]}</h1></header>
+  <div class="prose prose-slate max-w-none">
+    <div class="not-prose mb-6"><p class="text-lg font-semibold text-navy-900">{AUTHOR_NAME}</p><p class="text-navy-700">{AUTHOR_ROLE[lang]}</p></div>
+    <p>{SITE_NAMES[lang]} is published by {AUTHOR_NAME}, a company that turns public rules and public data into free tools. This site serves people entering sterile processing: trainees hired into a hospital department who must certify within a deadline, students finishing a course, technicians moving to another state, and managers who need a clear table of what each state asks.</p>
+    <h2>What you will find here</h2>
+    <p>The seven state texts on central service technicians with their effective dates, a finder for all 50 states and DC, a deadline calculator for each state, the CRCST and CSPDT requirements compared, calculators for cost, hands-on hours, provisional deadlines, renewal dates, CBSPD points and exam windows, the official pass rates, and {h.num(h.count)} practice questions written from the public CRCST outline. All of it is free, with no account and no email address.</p>
+    <h2>Where the content comes from</h2>
+    <p>State rules were read in the statutes and rules themselves, on the legislature or health department sites, and each state page links to its text. Exam facts come from the HSPA Certification Handbook revised in January 2026, the CRCST content outline, the CBSPD technician page and its 2026 candidate bulletin, and the statistics both bodies publish. The <a href={route('method', lang)}>method page</a> explains where a source could not be read directly and what was used instead.</p>
+    <h2>What we are not</h2>
+    <p>We are not HSPA, the CBSPD, Prometric, a state agency, a school or an employer. We cannot see an application, book an exam or confirm that a particular job falls under a state law. State pages summarize texts; they are not legal advice. The practice questions cover instrument reprocessing for exam preparation; they are not clinical guidance.</p>
+    <h2>How the site is funded</h2>
+    <p>Nothing is sold here: no course, no question pack, no referral fee. If advertising appears one day, it will stay out of the calculators and quizzes, which do not send what you type anywhere.</p>
+    <h2>Report a mistake</h2>
+    <p>Write to <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> with the state, the fee or the first words of the question. The <a href={route('editorial', lang)}>editorial policy</a> says how corrections are made and dated. The site has {n} pages.</p>
+    <p class="text-sm text-navy-600">Rules and fees last checked on <time datetime={LAST_UPDATED}>{displayDate(LAST_UPDATED, 'en-US')}</time>.</p>
+  </div>
+</PageLayout>

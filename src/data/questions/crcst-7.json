@@ -1,0 +1,124 @@
+{
+ "questions": [
+  {
+   "id": "crcst-7-01",
+   "exam": "crcst",
+   "domain": "7",
+   "ref": "7.I.B",
+   "q": "Which federal law protects the privacy of patient information a technician may see on case carts or labels?",
+   "options": [
+    "OSHA",
+    "FIFO",
+    "IUSS",
+    "HIPAA"
+   ],
+   "answer": 3,
+   "explain": "The Health Insurance Portability and Accountability Act protects patient health information. Names and procedures seen on pick lists, labels or schedules are shared only with people who need them for their work."
+  },
+  {
+   "id": "crcst-7-02",
+   "exam": "crcst",
+   "domain": "7",
+   "ref": "7.I.A",
+   "q": "A surgeon complains that a tray was missing an instrument. What is the best first response?",
+   "options": [
+    "Argue that the count sheet was signed and close the matter",
+    "Blame the previous shift",
+    "Listen, solve the urgent need and report it",
+    "Ignore the comment"
+   ],
+   "answer": 2,
+   "explain": "Service recovery starts with listening and meeting the urgent need, for example by sending the missing instrument. The error is then reported so the department can find its cause and prevent it."
+  },
+  {
+   "id": "crcst-7-03",
+   "exam": "crcst",
+   "domain": "7",
+   "ref": "7.III.B",
+   "q": "How many continuing education credits does the CRCST require each year to renew?",
+   "options": [
+    "6 credits",
+    "12 credits",
+    "10 credits",
+    "24 credits"
+   ],
+   "answer": 1,
+   "explain": "The HSPA Certification Handbook asks CRCST holders for 12 continuing education credits a year, plus the renewal fee. States with a law usually ask for 10 hours a year, which the 12 CRCST credits cover."
+  },
+  {
+   "id": "crcst-7-04",
+   "exam": "crcst",
+   "domain": "7",
+   "ref": "7.I.B",
+   "q": "Two requests arrive: a tray for a case starting in 20 minutes and a supply room restock. What comes first?",
+   "options": [
+    "The tray for the case about to start",
+    "The supply room restock",
+    "Whichever request came by email",
+    "Neither until the break is over"
+   ],
+   "answer": 0,
+   "explain": "Prioritizing means meeting the most time-critical need first. A procedure about to start depends on the tray, while a restock can usually wait a short time without harm."
+  },
+  {
+   "id": "crcst-7-05",
+   "exam": "crcst",
+   "domain": "7",
+   "ref": "7.II.A",
+   "q": "A group from sterile processing, surgery and infection prevention meets to cut tray errors. What kind of team is it?",
+   "options": [
+    "A single-department task force",
+    "A union committee",
+    "A vendor panel",
+    "A cross-functional team"
+   ],
+   "answer": 3,
+   "explain": "Cross-functional teams bring together people from different departments who each own part of a process. Tray errors involve assembly, the operating room and infection prevention, so all three need to be at the table."
+  },
+  {
+   "id": "crcst-7-06",
+   "exam": "crcst",
+   "domain": "7",
+   "ref": "7.I.C",
+   "q": "In surgical terms, what does the suffix -otomy mean?",
+   "options": [
+    "Surgical removal",
+    "Looking inside",
+    "Cutting into",
+    "Surgical repair"
+   ],
+   "answer": 2,
+   "explain": "The suffix -otomy means cutting into, as in laparotomy. Removal is -ectomy, looking inside is -scopy, and repair is -plasty. Knowing these helps technicians identify sets and instruments."
+  },
+  {
+   "id": "crcst-7-07",
+   "exam": "crcst",
+   "domain": "7",
+   "ref": "7.I.C",
+   "q": "What does the ending -scope indicate in an instrument name?",
+   "options": [
+    "An instrument for cutting",
+    "An instrument for viewing",
+    "A device for suction",
+    "A tool for clamping"
+   ],
+   "answer": 1,
+   "explain": "A scope is an instrument used to look inside, such as an arthroscope or a laryngoscope. Many need special handling, testing and reprocessing steps in their instructions for use."
+  },
+  {
+   "id": "crcst-7-08",
+   "exam": "crcst",
+   "domain": "7",
+   "ref": "7.III.A",
+   "q": "Which habit best supports career growth for a sterile processing technician?",
+   "options": [
+    "Keeping certification current and adding training",
+    "Skipping in-service sessions",
+    "Letting certification lapse once the employer has hired you",
+    "Working without reading the IFU"
+   ],
+   "answer": 0,
+   "explain": "Certification bodies require ongoing education, and further credentials in instruments, endoscopes or leadership open new roles. In-services and reading instructions for use keep skills current as devices change."
+  }
+ ]
+}

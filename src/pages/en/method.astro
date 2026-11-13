@@ -1,0 +1,31 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { LAST_UPDATED } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+import { breadcrumbSchema, articleSchema } from '../../lib/seo';
+import { helpers } from '../../lib/helpers';
+import { displayDate } from '../../lib/format';
+import { domainsOf } from '../../lib/engine/exam';
+const lang = 'en';
+const h = helpers(lang);
+const s = (k: Parameters<typeof h.src>[0], t: string) => h.src(k, t);
+const rows = domainsOf('crcst').map((d) => [`${d.code}. ${d.name}`, d.items, h.num(h.inPool(d.code))]);
+---
+<PageLayout title="Method: how state rules, fees and questions are checked" description="How we read the seven state laws on central service technicians, date each rule and fee, compute deadlines after hire, and write the CRCST practice questions." lang={lang} jsonLd={[articleSchema({ title: 'How the state rules, fees and questions are checked', description: 'Method of Sterile Processing By State', path: route('method', lang), lang }), breadcrumbSchema([{ name: 'Home', path: route('home', lang) }, { name: 'Method', path: route('method', lang) }])]} breadcrumbs={[{ label: 'Method' }]}>
+  <header class="mb-6"><p class="mb-1 text-xs font-semibold uppercase tracking-wide text-accent-600">Method</p><h1 class="mt-0 text-3xl font-bold text-navy-900 md:text-4xl">How the state rules, fees and questions are checked</h1></header>
+  <div class="prose prose-slate max-w-none">
+    <p>All pages and calculators read two files: a parameter file holding the state rules, the exam formats, the fees and the statistics read on {h.read}, and a bank of practice questions. No page types a date or a fee by hand, so a change in a law or a handbook is made once and every page follows.</p>
+    <h2>1. State laws</h2>
+    <p>Each state was read in its own text: <Fragment set:html={s('ny_law', 'New York Public Health Law § 2824')} /> with the <Fragment set:html={s('ny_doh', 'Department of Health letter of January 20, 2015')} /> for the effective date and scope; <Fragment set:html={s('nj_rule', 'N.J.A.C. 8:43G-8.2')} /> for New Jersey, in the unofficial copy of the New Jersey Administrative Code published by the Cornell Legal Information Institute, not the official code; <Fragment set:html={s('ct_law', 'C.G.S. § 20-185r')} />; <Fragment set:html={s('pa_act', 'Act 80 of 2020')} />; <Fragment set:html={s('de_code', '16 Del. C. §§ 3010A to 3014A')} /> and the <Fragment set:html={s('de_act', 'session law')} />; <Fragment set:html={s('mn_law', 'Minn. Stat. § 148.781')} /> and the <Fragment set:html={s('mn_act', '2025 special session law')} />. Tennessee's official code is published for the state by LexisNexis and could not be read directly; we used an <Fragment set:html={s('tn_law', 'unofficial public copy of § 68-11-239')} /> and checked it against a <Fragment set:html={s('tn_faq', 'question-and-answer article')} />. Bills come from the <Fragment set:html={s('fl_bill', 'Florida Senate')} /> and the <Fragment set:html={s('hspa_leg', 'HSPA legislative page')} />.</p>
+    <p>The effective date is the date the duty began, not the date the bill was signed. A state is listed as having no law when we found no adopted text; that list is built by elimination, not by reading every state code.</p>
+    <h2>2. Deadlines after hire</h2>
+    <p>A deadline is the date of hire plus the number of months in the text. When the same day does not exist in the target month (August 31 plus six months), we use the last day of that month. Earlier-employment rules use the cut-off date in the text: employment on or before it qualifies. New York's rule depends on a cumulative year of past work, which a calculator cannot check, so it is stated in words.</p>
+    <h2>3. Exam facts and fees</h2>
+    <p>CRCST facts come from the <Fragment set:html={s('hspa_handbook', 'HSPA Certification Handbook revised January 2026')} />, the <Fragment set:html={s('hspa_crcst', 'CRCST page')} />, the <Fragment set:html={s('hspa_outline', 'content outline')} /> and the <Fragment set:html={s('hspa_stats', 'statistics page')} />. CSPDT facts come from the <Fragment set:html={s('cbspd_tech', 'CBSPD technician page')} />, the <Fragment set:html={s('cbspd_bulletin', '2026 candidate bulletin')} />, the <Fragment set:html={s('cbspd_recert', 'recertification page')} /> and the <Fragment set:html={s('cbspd_stats', 'statistics page')} />. When the CBSPD page and bulletin give different fees, both are shown. Pass rates are computed by us from the published counts.</p>
+    <h2>4. Practice questions</h2>
+    <p>The {h.num(h.count)} questions are written by Radif Partners for the sections of the CRCST outline and show the outline reference they were written against. Each has four options, one right answer and an explanation. Every build checks the bank: unique ids and stems, four distinct options, explanation length, right answers spread over A to D, and no right answer given away by being the longest. None is presented as a real exam question.</p>
+    <Fragment set:html={h.table(['Section', 'Questions in a mock', 'Questions in our bank'], rows, 'Mock quotas from the outline weights by largest remainders.', ['l', 'r', 'r'])} />
+    <p>A mock takes 50 questions in those quotas and times them at the real pace, 180 minutes for 150 questions. HSPA does not publish its passing point as a number, so the 75 percent line in the results is a study target set by this site and labelled as such.</p>
+    <p>Method version of <time datetime={LAST_UPDATED}>{displayDate(LAST_UPDATED, 'en-US')}</time>. A rule or an answer that looks wrong: <a href={route('contact', lang)}>contact</a>.</p>
+  </div>
+</PageLayout>

@@ -1,0 +1,21 @@
+{
+ "name": "Sterile Processing By State",
+ "short_name": "Sterile Processing",
+ "description": "Sterile processing technician rules by state: which states require certification, from when, deadlines after hiring, CRCST and CSPDT exam fees and format.",
+ "start_url": "/en/",
+ "display": "standalone",
+ "background_color": "#ffffff",
+ "theme_color": "#1F5F74",
+ "icons": [
+  {
+   "src": "/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  }
+ ]
+}

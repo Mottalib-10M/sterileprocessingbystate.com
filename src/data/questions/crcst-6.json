@@ -1,0 +1,94 @@
+{
+ "questions": [
+  {
+   "id": "crcst-6-01",
+   "exam": "crcst",
+   "domain": "6",
+   "ref": "6.IV.C",
+   "q": "A pump returned for cleaning has an expired preventive maintenance label. What do you do?",
+   "options": [
+    "Clean it and send it straight back to the nursing unit",
+    "Remove the label and reuse the pump",
+    "Pull it and send it to biomedical engineering",
+    "Store it with the clean equipment"
+   ],
+   "answer": 2,
+   "explain": "Equipment without current preventive maintenance cannot be issued. It is tagged out and sent to biomedical engineering, which checks it and applies a new label before it returns to service."
+  },
+  {
+   "id": "crcst-6-02",
+   "exam": "crcst",
+   "domain": "6",
+   "ref": "6.IV.B",
+   "q": "During inspection you see a frayed power cord on a patient care device. What is correct?",
+   "options": [
+    "Tape the cord and dispatch the device",
+    "Tag it out of service and report it for repair",
+    "Send it to the unit with a warning note taped on it",
+    "Cut off the frayed part"
+   ],
+   "answer": 1,
+   "explain": "Damaged cords are an electrical hazard. The device is removed from service, labeled as defective and sent to biomedical engineering; it is never repaired on the spot by sterile processing staff."
+  },
+  {
+   "id": "crcst-6-03",
+   "exam": "crcst",
+   "domain": "6",
+   "ref": "6.IV.A",
+   "q": "What happens to single-use consumables attached to returned equipment?",
+   "options": [
+    "They are removed and discarded before cleaning",
+    "They are cleaned and reused",
+    "They are sterilized with the device",
+    "They stay attached so the next patient can use them"
+   ],
+   "answer": 0,
+   "explain": "Tubing, sleeves, pads and other disposable parts are taken off and discarded as waste before the device is cleaned, so every surface can be reached and nothing used goes to another patient."
+  },
+  {
+   "id": "crcst-6-04",
+   "exam": "crcst",
+   "domain": "6",
+   "ref": "6.V.C",
+   "q": "Where should clean, ready-to-use patient care equipment be kept?",
+   "options": [
+    "In the decontamination room",
+    "In the hallway next to the soiled room, under a cover",
+    "In a closed vehicle outside",
+    "In a clean, dry, secure area, charged if needed"
+   ],
+   "answer": 3,
+   "explain": "Clean equipment is stored apart from soiled equipment, protected from dust and moisture, and plugged in or with charged batteries so it works when a unit calls for it."
+  },
+  {
+   "id": "crcst-6-05",
+   "exam": "crcst",
+   "domain": "6",
+   "ref": "6.II.B",
+   "q": "Why is one-way flow kept in the patient care equipment area?",
+   "options": [
+    "To speed up battery charging for every returned device",
+    "Because devices only fit one way",
+    "To keep soiled equipment apart from clean equipment",
+    "To shorten inventory counts"
+   ],
+   "answer": 2,
+   "explain": "Soiled devices arrive at one end and leave clean and labeled at the other. Keeping the flow in one direction stops clean equipment from being contaminated by returns."
+  },
+  {
+   "id": "crcst-6-06",
+   "exam": "crcst",
+   "domain": "6",
+   "ref": "6.III.A",
+   "q": "What does an equipment tracking system, manual, computer or RFID, make possible?",
+   "options": [
+    "Sterilizing devices automatically",
+    "Knowing where each device is and its status",
+    "Charging staff for lost equipment",
+    "Replacing the manufacturer's instructions for each device"
+   ],
+   "answer": 1,
+   "explain": "Tracking shows which devices are in use, being cleaned, ready or out for repair, including rentals and loaners. It speeds up deliveries and supports maintenance schedules and recalls."
+  }
+ ]
+}
