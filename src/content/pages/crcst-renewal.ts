@@ -1,7 +1,7 @@
 import { definePage } from '../../lib/guide-types';
 export default definePage({
   id: 'crcst-renewal', group: 'crcst', order: 330,
-  tool: { kind: 'mini:renewal', props: { m: 3, y: 2025 } },
+  tool: { kind: 'mini:renewal', props: { m: 3, y: 2026 } },
   mini: { kind: 'mini:deadline', props: { st: 7, m: 5, y: 2026 } },
   related: ['crcst-certification', 'cbspd-recertification', 'new-york-central-service-technician-law', 'sterile-processing-certification-cost'],
   sources: ['hspa_handbook', 'hspa_crcst'],

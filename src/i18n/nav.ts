@@ -5,8 +5,8 @@ import type { Group } from '../lib/guide-types';
 export interface NavLink { href: string; label: string } export interface NavCategory { label: string; links: NavLink[] }
 const CORE: Record<string, string> = { home: 'Rules by state', method: 'Method and sources', about: 'About', widget: 'Embed the state finder', contact: 'Contact', editorial: 'Editorial policy', privacy: 'Privacy', terms: 'Legal notice', cookies: 'Cookies' };
 /** Short labels for the top menu (one or two words, MASTERFACTORY §10.3); full labels in the footer and on the home page. */
-const GROUP_SHORT: Record<Group, string> = { states: 'States', become: 'Getting started', crcst: 'CRCST', cbspd: 'CSPDT', practice: 'Practice' };
-const GROUP_LABEL: Record<Group, string> = { states: 'Certification laws by state', become: 'Becoming a technician: steps, training, cost', crcst: 'CRCST exam and renewal (HSPA)', cbspd: 'CSPDT exam and recertification (CBSPD)', practice: 'Practice questions by outline section' };
+const GROUP_SHORT: Record<Group, string> = { states: 'States', become: 'Getting started', crcst: 'CRCST certificate (HSPA)', cbspd: 'CSPDT certificate (CBSPD)', practice: 'Practice' };
+const GROUP_LABEL: Record<Group, string> = { states: 'Certification laws by state', become: 'Becoming a technician: steps, training, cost', crcst: 'CRCST certificate, given by HSPA: exam and renewal', cbspd: 'CSPDT certificate, given by the CBSPD board: exam and recertification', practice: 'Practice questions by outline section' };
 export const GROUPS_ORDER: Group[] = ['states', 'become', 'crcst', 'cbspd', 'practice'];
 export const groupLabel = (g: Group, _lang: Locale = 'en') => GROUP_LABEL[g];
 export const label = (id: string, _lang: Locale = 'en') => CORE[id] ?? pageById(id)?.en.nav ?? id;

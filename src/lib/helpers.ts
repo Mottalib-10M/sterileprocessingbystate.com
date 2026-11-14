@@ -53,7 +53,7 @@ export function helpers(lang: Locale = 'en', strict = false) {
     table: (h: string[], r: Array<Array<string | number>>, c?: string, al: Array<'l' | 'r'> = []) => table(h, r, c, al),
     /** Revision table of a practice page, folded: it gives away answers to the questions at the top of the page
      *  (testeurs naïfs 2026-11-14, 2e tour). Still in the HTML, opened with one tap. */
-    revision: (html: string) => `<details class="not-prose my-6 rounded-lg border border-navy-200 px-3 py-2"><summary class="cursor-pointer text-sm font-medium text-accent-700 underline">Revision table: it gives some answers away, so try the questions first</summary>${html}</details>`,
+    revision: (html: string) => `<details class="not-prose my-6 rounded-lg border border-navy-200 px-3 py-2"><summary class="cursor-pointer text-sm font-medium text-accent-700 underline">Study sheet: it gives some answers away, so try the questions first</summary>${html}</details>`,
     X: examOf('crcst'), C: CRCST, D: CSPDT,
     domains: domainsOf('crcst'),
     /** Outline table: section, weight, questions out of 125 scored at that weight (rounded), our mock quota. */
@@ -67,7 +67,7 @@ export function helpers(lang: Locale = 'en', strict = false) {
     lawLine: (id: string) => `${st(id).citation}, in force since ${dateL(st(id).effective)}`,
     certifyBy: (id: string, hireISO: string) => dateL(addMonths(hireISO, st(id).graceMonths)),
     /** Seven-state summary table. */
-    stateTable: (caption?: string) => table(['State', 'Time after hire', 'In force', 'Continuing education a year', 'Official text'], STATES.map((s) => [`<a href="${route(statePage(s.id), lang)}" class="font-semibold text-accent-700 underline">${s.name} →</a>`, `${s.graceMonths} months`, s.status === 'enacted-future' ? `${dateL(s.effective)} (for people hired from ${dateL(s.bitesFrom ?? s.effective)})` : dateL(s.effective), s.ceHours ? `${s.ceHours} hours` : 'no hours set by the rule', `<span class="text-xs text-navy-600">${s.citation}</span>`]), caption, ['l', 'r', 'l', 'r', 'l']),
+    stateTable: (caption?: string) => table(['State', 'Time after hire', 'In force', 'Continuing education a year', 'Official text'], STATES.map((s) => [`<a href="${route(statePage(s.id), lang)}" class="font-semibold text-accent-700 underline">${s.name} →</a>`, `${s.graceMonths} months`, s.status === 'enacted-future' ? `For people hired from ${dateL(s.bitesFrom ?? s.effective)} (law in force since ${dateL(s.effective)})` : dateL(s.effective), s.ceHours ? `${s.ceHours} hours` : 'no hours set by the rule', `<span class="text-xs text-navy-600">${s.citation}</span>`]), caption, ['l', 'r', 'l', 'r', 'l']),
     pr: (e: 'crcst' | 'cspdt', y: number) => passRate(e, y),
     statsTable: (e: 'crcst' | 'cspdt', caption?: string) => table(['Year', 'Candidates', 'Passed', 'Failed', 'Pass rate'], (P.stats[e].years as number[][]).map(([y, p, f]) => [String(y), p + f, p, f, pct(p / (p + f), 'en', 1)]), caption, ['l', 'r', 'r', 'r', 'r']),
   };

@@ -42,6 +42,11 @@ for (let i = 0; i < parts.length; i += 3) { chunks.push({ html: parts[i] }); if 
       <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-accent-600">{groupLabel(page.group)}</p>
       <h1 class="mt-0 text-[1.75rem] font-bold text-navy-900 max-sm:leading-tight sm:text-3xl md:text-4xl">{T.h1}</h1>
       <p class="mt-2 text-base text-navy-700 sm:text-lg">{T.intro}</p>
+      {/* Testeurs naïfs 2026-11-14, 3e tour : CRCST, CSPDT, HSPA et CBSPD encore confondus ; légende courte sur chaque page. */}
+      <div data-sigles class="mt-1 text-xs text-navy-700 sm:flex sm:flex-wrap sm:gap-x-4">
+        <details><summary class="cursor-pointer list-none"><strong>CRCST</strong>: a certificate, given by <strong>HSPA</strong>, an association <span class="text-accent-700">▾</span></summary><p class="text-navy-600">Certified Registered Central Service Technician, given by the Healthcare Sterile Processing Association</p></details>
+        <details><summary class="cursor-pointer list-none"><strong>CSPDT</strong>: a certificate, given by the <strong>CBSPD</strong>, a board <span class="text-accent-700">▾</span></summary><p class="text-navy-600">Certified Sterile Processing and Distribution Technician, given by the Certification Board for Sterile Processing and Distribution</p></details>
+      </div>
       <p data-chrome data-independant class="mt-1 text-xs font-medium text-navy-600">{ui.independent}</p>
     </header>
     {page.tool && <div data-outil id="calculator" class="mb-4 scroll-mt-20"><Tool tool={page.tool} primary={true} seedKey={page.id} here={path} /></div>}

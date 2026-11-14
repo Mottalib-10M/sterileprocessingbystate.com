@@ -46,17 +46,19 @@ const resume = `A sterile processing technician, called a central service techni
   <header class="mb-3">
     <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-accent-600">Central service · sterile processing · 50 states and DC</p>
     <h1 class="mt-0 text-[1.75rem] font-bold text-navy-900 max-sm:leading-tight sm:text-3xl md:text-4xl">Sterile processing technician rules in your state</h1>
-    <p class="mt-2 text-base text-navy-700 sm:text-lg">{nTexts.charAt(0).toUpperCase() + nTexts.slice(1)} states require sterile processing technicians, who clean and sterilize the instruments hospitals reuse, to hold a national certificate: {nInForce} apply it today, and {mn.name} from hires on {h.date(mn.bitesFrom ?? mn.effective)}. Pick your state for your answer: a new hire gets {st('pennsylvania').graceMonths} to {st('new-jersey').graceMonths} months to earn the certificate.</p>
-    <details class="mt-1 text-sm text-navy-700" data-sigles>
-      <summary class="cursor-pointer font-medium text-accent-700 underline">What do these letters mean?</summary>
-      <ul class="mt-1 list-disc space-y-1 pl-5">
-        <li>There are two national sterile processing certificates, and state laws that name one accept either: the <strong>CRCST</strong> (Certified Registered Central Service Technician) and the <strong>CSPDT</strong> (Certified Sterile Processing and Distribution Technician).</li>
-        <li>Each one is awarded by its own organization: <strong>HSPA</strong> (Healthcare Sterile Processing Association) awards the CRCST, the <strong>CBSPD</strong> (Certification Board for Sterile Processing and Distribution) awards the CSPDT.</li>
+    <p class="mt-2 text-base text-navy-700 sm:text-lg">{nTexts.charAt(0).toUpperCase() + nTexts.slice(1)} states require sterile processing technicians, who clean and sterilize the instruments hospitals reuse, to hold a national certificate: {nInForce} apply it today, and {mn.name} starts with people hired from {h.date(mn.bitesFrom ?? mn.effective)}. Pick your state for your answer: a new hire gets {st('pennsylvania').graceMonths} to {st('new-jersey').graceMonths} months to earn the certificate.</p>
+    <div class="mt-2 rounded-md border border-navy-200 bg-navy-50 px-3 py-2 text-sm text-navy-800" data-sigles>
+      <p class="font-semibold text-navy-900">What do these letters mean?</p>
+      <ul class="mt-1 space-y-1">
+        <li><details><summary class="cursor-pointer list-none"><strong>CRCST</strong>: a certificate, given by <strong>HSPA</strong>, an association <span class="text-xs text-accent-700">▾ full names</span></summary><p class="text-xs text-navy-600">Certified Registered Central Service Technician, given by the Healthcare Sterile Processing Association</p></details></li>
+        <li><details><summary class="cursor-pointer list-none"><strong>CSPDT</strong>: a certificate, given by the <strong>CBSPD</strong>, a board <span class="text-xs text-accent-700">▾ full names</span></summary><p class="text-xs text-navy-600">Certified Sterile Processing and Distribution Technician, given by the Certification Board for Sterile Processing and Distribution</p></details></li>
       </ul>
-    </details>
+      <p class="mt-1 text-xs">Both are national; every state law that names a certificate accepts either.</p>
+    </div>
     <p data-chrome data-independant class="mt-1 text-xs font-medium text-navy-600">{ui.independent}</p>
   </header>
   <div data-outil id="calculator" class="mb-4 scroll-mt-20"><Tool tool={{ kind: 'states', props: { state: 'Pennsylvania' } }} primary={true} seedKey="home" /></div>
+  <p class="mb-4 text-sm"><a href="#steps" class="font-medium text-accent-700 underline">New to this job? The five steps to get certified →</a></p>
   <Clamp text={resume} id="clamp-home" lang={lang} class="mb-3" />
   <p class="mb-8 text-sm text-navy-600">State texts, fees and exam rules checked on <time datetime={LAST_UPDATED}>{displayDate(LAST_UPDATED, 'en-US')}</time> · {AUTHOR_NAME} · <a href={route('method', lang)} class="underline hover:text-navy-900">How we read the laws</a> · <a href={route('about', lang)} class="underline hover:text-navy-900">About this site</a></p>
 
@@ -85,15 +87,16 @@ const resume = `A sterile processing technician, called a central service techni
       ['Full name', C.name, D.name],
       ['To qualify', `${h.num(C.handsOn.total)} hands-on hours, before or within ${C.handsOn.provisionalMonths} months after the exam`, '12 months of work, a course passed with 70, or two other routes'],
       ['When you test', `Any day at a Prometric center, within ${C.windowDays} days of approval`, 'One week per quarter'],
-      ['Exam fee', h.usd(C.fee), `${h.usd(D.feeWeb)}*`],
+      ['Exam fee', h.usd(C.fee), `${h.usd(D.feeWeb)}<span class="block text-xs text-navy-600">fee on the CBSPD exam page; its 2026 bulletin says ${h.usd(D.feeBulletin)}</span>`],
       ['Pass mark', 'Not published: you see pass or fail on screen', `Scaled score of ${D.passScaled}`],
       ['2025 pass rate', h.pc(pr.rate, 1), h.pc(prD.rate, 1)],
       ['Renewal', `Each year: ${C.renewal.ceHours} continuing education credits and ${h.usd(C.renewal.fee)}`, `Every ${D.certYears} years: ${D.recertPoints} points and ${h.usd(D.recertFee)}`],
+      [`The ${st('new-york').ceHours} hours a year of ${nCe} state laws`, 'A separate rule from this renewal; the same courses can often count for both', 'A separate rule from this recertification; the same courses can often count for both'],
       ['Current holders, end of 2025', h.num(h.P.stats.crcst.current), h.num(h.P.stats.cspdt.current)],
-    ], `HSPA Certification Handbook (revised January 2026), CRCST page and statistics; CBSPD technician page, 2026 bulletin and statistics; read on ${h.read}. *The fee on the CBSPD exam page; its 2026 bulletin still says ${h.usd(D.feeBulletin)}.`, ['l', 'l', 'l'])} />
+    ], `HSPA Certification Handbook (revised January 2026), CRCST page and statistics; CBSPD technician page, 2026 bulletin and statistics; read on ${h.read}.`, ['l', 'l', 'l'])} />
     <p>For most people the choice comes down to two things: what the employer names, and what is practical. With a manager willing to sign hours, the CRCST can be taken soon. With a graded course and no year of work, the CSPDT is open sooner. The <Fragment set:html={a('sterile-processing-technician-certification', 'comparison page')} /> has a calculator that checks which exam you can sit today.</p>
 
-    <h2>How to get there, step by step</h2>
+    <h2 id="steps">How to get there, step by step</h2>
     <ol>
       <li><strong>Find out what your state asks.</strong> Use <a href="#calculator">the state finder at the top of this page</a>. If your state has no law, read the job postings you are aiming at.</li>
       <li><strong>Get into a department.</strong> A trainee job, a school externship or volunteering all count toward HSPA's hours if a manager above you witnesses and signs them.</li>

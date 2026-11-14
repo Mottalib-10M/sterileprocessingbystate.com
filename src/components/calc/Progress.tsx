@@ -38,7 +38,7 @@ export default function Progress({ exam: e0, reviewHref, idPrefix = 'pg', second
           </div>
         </form>
         <div className="mt-4 overflow-x-auto"><table className="journal w-full text-sm">
-          <thead><tr><th scope="col" className="px-3 py-2 text-left">Outline domain</th><th scope="col" className="px-3 py-2 text-right">Weight</th><th scope="col" className="px-3 py-2 text-right">Practiced</th><th scope="col" className="px-3 py-2 text-right">Right last time</th></tr></thead>
+          <thead><tr><th scope="col" className="px-3 py-2 text-left">Exam section</th><th scope="col" className="px-3 py-2 text-right">Weight</th><th scope="col" className="px-3 py-2 text-right">Practiced</th><th scope="col" className="px-3 py-2 text-right">Right last time</th></tr></thead>
           <tbody>{rows.map((r) => <tr key={r.code}><td className="border-b border-navy-100 px-3 py-2">{r.code}. {r.short}</td><td className="tabular-nums border-b border-navy-100 px-3 py-2 text-right">{Math.round(r.share * 100)}%</td><td className="tabular-nums border-b border-navy-100 px-3 py-2 text-right">{r.done} / {r.size}</td><td className="tabular-nums border-b border-navy-100 px-3 py-2 text-right">{r.done ? `${Math.round((r.ok / r.done) * 100)}%` : 'not yet'}</td></tr>)}</tbody>
         </table></div>
         {mocks.length > 0 && <div className="mt-4 text-sm"><p className="font-semibold text-navy-900">Last {LABEL(exam)} mocks</p><ul className="mt-1 space-y-1 text-navy-700">{mocks.map((r, i) => <li key={i} className="tabular-nums">{r.at}: {r.right} / {r.total} ({Math.round((r.right / Math.max(1, r.total)) * 100)}%)</li>)}</ul></div>}

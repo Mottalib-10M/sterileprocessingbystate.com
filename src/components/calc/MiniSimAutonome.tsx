@@ -101,7 +101,7 @@ export default function MiniSimAutonome({ kind, lang = 'en', href, locale = 'en-
               <div className="mt-3 space-y-3">{avances.map(champ)}</div>
             </details>
           )}
-          {fixes.length > 0 && <p data-fixe className="text-xs" style={{ color: C.muted }}>{lib.fixeParLaPage}{dp} {fixes.map((i, n) => <span key={i.id}>{n > 0 && ' · '}{i.label}{dp} <span className="font-semibold" style={{ color: C.text }}>{valeur(i)}</span></span>)}</p>}
+          {fixes.length > 0 && <p data-fixe className="text-xs" style={{ color: C.muted }}>{fixes.map((i, n) => <span key={i.id}>{n > 0 && ' · '}{i.label}{dp} <span className="font-semibold" style={{ color: C.text }}>{valeur(i)}</span></span>)} ({lib.fixeParLaPage})</p>}
         </form>
         <div aria-live="polite" className="rounded-lg p-4" style={{ background: C.surface }}>
           {visibles.length > 0 && resultatExemple(touched) && <p data-exemple className="mb-2 rounded-md border px-2 py-1 text-xs leading-snug" style={{ borderColor: '#fcd34d', background: '#fffbeb', color: '#78350f' }}><strong className="font-semibold">{suppose || lib.exemple}</strong> — {lib.exempleAide}</p>}

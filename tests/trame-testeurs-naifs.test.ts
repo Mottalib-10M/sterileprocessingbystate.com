@@ -431,7 +431,7 @@ describe('13. MiniSim : alerte, lien selon la réponse, champ fixé par la page,
     for (const C of [MiniSim, MiniSimAutonome]) {
       const h = renderToStaticMarkup(createElement(C, { kind: 'k', lang: 'en', locked: ['etat'], defaults: { etat: 2, heures: 160 } }));
       expect(h).not.toContain('id="m-k-etat"');
-      expect(h).toMatch(/data-fixe[^>]*>Set by this page: <span>State: <span[^>]*>Ohio<\/span>/);
+      expect(h).toMatch(/data-fixe[^>]*><span>State: <span[^>]*>Ohio<\/span><\/span> \(set by this page\)/);
       expect(h).toContain('id="m-k-cas"'); // 160 h : le champ conditionnel paraît
       expect(h).toContain('data-exemple'); // il reste des champs à changer
     }

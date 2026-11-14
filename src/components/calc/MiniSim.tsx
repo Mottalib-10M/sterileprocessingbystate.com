@@ -20,7 +20,7 @@
  * - repli : « Ce que nous avons supposé », une ligne « libellé : valeur » par champ, valeur en gras ;
  * - `out.alert` : ligne d'alerte sous le gros chiffre ; `out.go` : lien qui dépend de la réponse (remplace le cta) ;
  * - `locked` : champs fixés par la page (« … in Texas ») : ni redemandés ni modifiables, nommés sous les champs
- *   (« Set by this page: State: Texas ») ; leur valeur vient de `defaults`, sinon de `def` ;
+ *   (« State: Texas (set by this page) ») ; leur valeur vient de `defaults`, sinon de `def` ;
  * - `showIf` d'un champ : caché quand il ne change rien ; une valeur en mots longue passe sous son libellé.
  */
 import { useMemo, useState } from 'react';
@@ -81,7 +81,7 @@ export default function MiniSim({ kind, lang = 'en', href, title, idPrefix = 'm'
             </details>
           )}
           {fixes.length > 0 && (
-            <p data-fixe className="text-xs text-navy-600">{lib.fixeParLaPage}{dp} {fixes.map((i, n) => <span key={i.id}>{n > 0 && ' · '}{i.label}{dp} <span className="font-semibold text-navy-900">{valeurAffichee(i, v[i.id])}</span></span>)}</p>
+            <p data-fixe className="text-xs text-navy-600">{fixes.map((i, n) => <span key={i.id}>{n > 0 && ' · '}{i.label}{dp} <span className="font-semibold text-navy-900">{valeurAffichee(i, v[i.id])}</span></span>)} ({lib.fixeParLaPage})</p>
           )}
         </form>
         <div aria-live="polite" className="rounded-lg bg-navy-50 p-4">

@@ -45,7 +45,7 @@ const SPECS: Record<string, () => MiniSpec> = {
         head, rows,
         alert: st?.id === 'minnesota' && d.status === 'exempt' ? 'Minnesota’s duty starts with hires from January 1, 2028' : undefined,
         go: st ? [`${st.name} rules in full`, `/en/${st.id === 'new-jersey' ? 'new-jersey-sterile-processing-certification' : `${st.id}-central-service-technician-law`}/`] : ['States without a law', '/en/states-without-a-certification-law/'],
-        note: `${d.why}${d.status === 'deadline' ? ' Counted from the 1st of the month you were hired: from your exact first day, the date moves later by the same number of days.' : ''}`,
+        note: `${d.why}${d.status === 'deadline' ? ' We count from the 1st of your hiring month: if you started on the 15th, your deadline is 14 days later.' : ''}`,
       };
     },
   }),
@@ -63,11 +63,15 @@ const SPECS: Record<string, () => MiniSpec> = {
       const c = examCost(route, v.a ?? 1, v.c ?? 0, v.yr ?? 0);
       // Testeurs naïfs 2026-11-14, 2e tour : « Total to budget $240 » lu comme le prix de l'examen ($140) ;
       // le total dit ce qu'il contient et la ligne « Exam fees only » vient en premier.
-      const exams = c.lines.filter((l) => / exam /.test(l.label + ' ')).reduce((x, l) => x + l.amount, 0);
+      const examLines = c.lines.filter((l) => / exam /.test(l.label + ' '));
+      const exams = examLines.reduce((x, l) => x + l.amount, 0);
       const more = c.total > exams;
+      // 3e tour : « Exam fees only $140 » suivi de « CRCST exam (HSPA) $140 » lu comme un double compte ;
+      // la ligne de sous-total ne paraît que s'il y a deux examens à additionner.
+      const subtotal = more && examLines.length > 1;
       return {
         head: [more ? `Total: exam${route === "both" ? "s" : ""}${c.years ? ` and ${plural(c.years, 'year')} of renewal` : ''}${v.c ? ', course' : ''}` : 'Total to budget', money(c.total)],
-        rows: [...(more ? [['Exam fees only', money(exams)] as [string, string]] : []), ...c.lines.map((l) => [l.label, money(l.amount)] as [string, string])],
+        rows: [...(subtotal ? [['Both exams together', money(exams)] as [string, string]] : []), ...c.lines.map((l) => [l.label, money(l.amount)] as [string, string])],
         alert: route !== 'crcst' ? `CBSPD fee: ${money(CSPDT.feeWeb)} on its exam page, ${money(CSPDT.feeBulletin)} in its 2026 bulletin` : undefined,
         note: `Fees read on ${dateL(P.retrieved_at)} in the HSPA handbook and on the CBSPD pages. Travel, books and lost work hours are not counted.`,
       };
@@ -124,8 +128,8 @@ const SPECS: Record<string, () => MiniSpec> = {
       return {
         head: ['Renewal due by', dateL(r.due)],
         // Testeurs naïfs 2026-11-14, 2e tour : « renew each year » mais une date un an plus loin que prévu.
-        alert: dueYear > y0 + 1 ? `Your ${mName(v.m)} ${dueYear - 1} renewal date has already passed, so this is the next one.` : undefined,
-        rows: [['Continuing education credits', `${r.ce} in the year before`], ['Fee', `${money(r.fee)} alone, or ${money(r.feeMember)} with an HSPA membership included`], ['If you miss it: grace period until', dateL(r.grace)]],
+        // 3e tour : l'alerte « already passed » inquiétait ; une ligne neutre dit quelle date est supposée faite.
+        rows: [...(dueYear > y0 + 1 ? [['Earlier renewals', `assumed done on time, the last one by the end of ${mName(v.m)} ${dueYear - 1}`] as [string, string]] : []), ['Continuing education credits', `${r.ce} in the year before`], ['Fee', `${money(r.fee)} alone, or ${money(r.feeMember)} with an HSPA membership included`], ['If you miss it: grace period until', dateL(r.grace)]],
         note: `Next due date after ${dateL(P.retrieved_at)}, assuming earlier renewals were made on time. During the ${CRCST.renewal.graceWeeks}-week grace period you are not certified and may not use the title; after it, the exam must be taken again.`,
       };
     },

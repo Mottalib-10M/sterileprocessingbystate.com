@@ -44,7 +44,7 @@ export function deadline(stateName: string, hireISO: string): DeadlineOut {
   if (st.id === 'new-york' && hireISO < st.effective) {
     return { status: 'past-employment', state: st, certifyBy: null, months: null, ceHours: st.ceHours, why: `Qualifies without the credential only with ${st.grandfather.charAt(0).toLowerCase()}${st.grandfather.slice(1)}.` };
   }
-  return { status: 'deadline', state: st, certifyBy: addMonths(hireISO, st.graceMonths), months: st.graceMonths, ceHours: st.ceHours, why: `${st.citation} gives ${st.graceMonths} months from the date of hire to obtain ${st.credentials}.` };
+  return { status: 'deadline', state: st, certifyBy: addMonths(hireISO, st.graceMonths), months: st.graceMonths, ceHours: st.ceHours, why: `The state law gives ${st.graceMonths} months from the date of hire to obtain ${st.credentials}.` };
 }
 
 export interface CostLine { label: string; amount: number; note?: string }

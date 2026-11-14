@@ -107,7 +107,7 @@ export default function Quiz({ exam: e0, mode = 'practice', domain: d0 = null, t
         {(pick || (mode === 'practice' && !topic)) && (
           <div className="grid gap-3 sm:grid-cols-2">
             {pick && <SelectField id={`${idPrefix}-exam`} label="Exam" value={exam} onChange={(v) => { const ex = v as ExamId; setExam(ex); setDomain(null); draw(ex, null, seedRef.current); }} options={EXAM_IDS.map((id) => ({ value: id, label: `${LABEL(id)}: ${examOf(id).name.replace(' certification examination', '')}` }))} />}
-            {mode === 'practice' && !topic && <SelectField id={`${idPrefix}-domain`} label="Outline domain" value={domain ?? ''} onChange={(v) => { const d = v || null; setDomain(d); draw(exam, d, seedRef.current); }} options={[{ value: '', label: 'All domains, mixed' }, ...domainsOf(exam).map((d) => ({ value: d.code, label: `${d.code}. ${d.name}` }))]} />}
+            {mode === 'practice' && !topic && <SelectField id={`${idPrefix}-domain`} label="Exam section" value={domain ?? ''} onChange={(v) => { const d = v || null; setDomain(d); draw(exam, d, seedRef.current); }} options={[{ value: '', label: 'All sections, mixed' }, ...domainsOf(exam).map((d) => ({ value: d.code, label: `${d.code}. ${d.name}` }))]} />}
           </div>
         )}
         <div className="rounded-lg border border-navy-300 bg-white">

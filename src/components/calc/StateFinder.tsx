@@ -39,10 +39,10 @@ export default function StateFinder({ state: s0 = 'Pennsylvania', idPrefix = 'sf
       </div>
       <table className="w-full text-sm"><tbody className="divide-y divide-navy-200">
         {st ? <>
-          <tr><td className="py-2 pr-3 text-navy-600">Certificate accepted</td><td className="py-2 text-navy-900">{st.credentials}</td></tr>
+          <tr><td className="py-2 pr-3 text-navy-600">Certificate accepted</td><td className="py-2 text-navy-900">{st.credentials}{/CRCST|CSPDT/.test(st.credentials) && <span className="block text-xs text-navy-600">Two national certificates: the CRCST is given by HSPA, an association; the CSPDT by the CBSPD, a board</span>}</td></tr>
           <tr><td className="py-2 pr-3 text-navy-600">Who is exempt</td><td className="py-2 text-navy-900">{st.grandfather ?? 'No exemption for staff already in post is written in the rule'}</td></tr>
           <tr><td className="py-2 pr-3 text-navy-600">Facilities covered</td><td className="py-2 text-navy-900">{st.facilities}</td></tr>
-          <tr><td className="py-2 pr-3 text-navy-600">Continuing education</td><td className="py-2 text-navy-900">{st.ceHours ? `${st.ceHours} hours a year: ${st.ceWho.charAt(0).toLowerCase()}${st.ceWho.slice(1)}` : st.ceWho}</td></tr>
+          <tr><td className="py-2 pr-3 text-navy-600">Continuing education</td><td className="py-2 text-navy-900">{st.ceHours ? `${st.ceHours} hours a year, for ${st.ceWho.charAt(0).toLowerCase()}${st.ceWho.slice(1)}` : st.ceWho}{st.ceHours ? <span className="block text-xs text-navy-600">A separate rule from the certificate’s own renewal; the same courses can often count for both</span> : null}</td></tr>
           <tr><td className="py-2 pr-3 text-navy-600">Official text</td><td className="py-2 text-xs text-navy-600">{st.citation} ({st.instrument.toLowerCase()})</td></tr>
         </> : <>
           <tr><td className="py-2 pr-3 text-navy-600">State law or rule</td><td className="py-2 text-navy-900">None found requiring certification of central service technicians</td></tr>
@@ -50,7 +50,7 @@ export default function StateFinder({ state: s0 = 'Pennsylvania', idPrefix = 'sf
           <tr><td className="py-2 pr-3 text-navy-600">What applies instead</td><td className="py-2 text-navy-900">Your employer’s job requirements; many hospitals ask for the CRCST or the CSPDT anyway</td></tr>
         </>}
       </tbody></table>
-      <p className="text-xs text-navy-700">Statutes and rules read on {dateL(P.retrieved_at)}. The other {OTHER_STATES} states and DC have no such law, according to HSPA’s list of state laws and our own search.</p>
+      <p className="text-xs text-navy-700">Statutes and rules read on {dateL(P.retrieved_at)}. The other {OTHER_STATES} states and DC have no such law, according to the list of state laws kept by HSPA (the association that gives the CRCST) and our own search.</p>
     </div>
   );
 }
