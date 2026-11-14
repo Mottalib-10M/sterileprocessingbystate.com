@@ -175,7 +175,7 @@ export default function Quiz({ exam: e0, mode = 'practice', domain: d0 = null, t
         <div className="mt-3 h-2 w-full overflow-hidden rounded bg-navy-200" aria-hidden="true"><div className="h-2 bg-accent-700" style={{ width: `${(answeredN / Math.max(1, n)) * 100}%` }} /></div>
         <p className={`mt-3 text-base font-semibold ${tone}`}>{status}</p>
         <table className="mt-2 w-full text-sm"><tbody className="divide-y divide-navy-200">
-          <tr><td className="py-1.5 text-navy-700">Study target: {target} of {counted.length || 0} ({Math.round(x.target * 100)}%), set by this site, not an official passing score</td></tr>
+          <tr><td className="py-1.5 text-navy-700">Study target: {target} of {counted.length || 0} ({counted.length ? Math.round((target / counted.length) * 100) : 0}%), set by this site, not an official passing score</td></tr>
           {isMock && <tr><td className="tabular-nums py-1.5 text-navy-700">Time left: {clock} of {mins} min</td></tr>}
           {isMock && <tr><td className="py-1.5 text-navy-700">{x.passText}</td></tr>}
         </tbody></table>

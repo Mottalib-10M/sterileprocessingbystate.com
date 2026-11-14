@@ -2,7 +2,7 @@ import { definePage } from '../../lib/guide-types';
 export default definePage({
   id: 'connecticut-central-service-technician-law', group: 'states', order: 130,
   tool: { kind: 'mini:deadline', props: { st: 7, m: 6, y: 2026, locked: 'st' } },
-  mini: { kind: 'mini:hours', props: { w: 24 } },
+  mini: { kind: 'mini:hours', props: { w: 24, d1: 0, d2: 0, d3: 0, d4: 0, d5: 0 } },
   related: ['sterile-processing-certification-by-state', 'new-york-central-service-technician-law', 'tennessee-central-service-technician-law', 'crcst-certification'],
   sources: ['ct_law', 'hspa_leg'],
   en: {
@@ -24,6 +24,6 @@ ${h.table(['Point', 'What § 20-185r provides'], [['Facilities', h.state('connec
 <h2>Staff outside the department</h2>
 <p>Connecticut's text has a feature that New York's lacks: it allows people who do not work in central service, such as operating room staff turning instruments around between cases, to decontaminate or sterilize equipment if the infection prevention and control committee has trained them and judged them competent. The facility must keep a list of these people. They are held to the same ten hours of yearly education.</p>
 <h2>Planning the two years</h2>
-<p>Two years sound generous, but the CRCST asks for 400 hours of hands-on work in a department, spread over five areas, before full certification. A part-timer at 24 hours a week needs about four months to log them. ${h.calc2('The second calculator on this page')} shows how many hours you still owe and how long they take at your pace. The ${h.a('crcst-provisional-certification', 'provisional route')} lets you sit the exam first and send the hours within six months.</p>`,
+<p>Two years sound generous, but the CRCST asks for 400 hours of hands-on work in a department, spread over five areas, before full certification. A part-timer at 24 hours a week who starts from zero needs ${Math.ceil(h.C.handsOn.total / 24)} weeks, about four months, to log them. ${h.calc2('The second calculator on this page')} shows how many hours you still owe and how long they take at your pace. The ${h.a('crcst-provisional-certification', 'provisional route')} lets you sit the exam first and send the hours within six months.</p>`,
   },
 });

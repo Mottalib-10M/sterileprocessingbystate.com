@@ -68,12 +68,15 @@ export default function MiniSim({ kind, lang = 'en', href, title, idPrefix = 'm'
         <form className="space-y-3" onSubmit={(e) => e.preventDefault()}>
           {visibles.filter((i) => !i.avance).map(champ)}
           {avances.length > 0 && (
-            <details data-repli className="rounded-lg border border-navy-200 px-3 py-2">
-              <summary className="cursor-pointer text-sm font-medium text-navy-700">{lib.plusDeReglages}
-                <span data-actuellement className="mt-1 block text-xs font-normal text-navy-600">
+            <details data-repli className="group rounded-lg border border-navy-200 px-3 py-2">
+              {/* Testeurs naïfs 2026-11-14, 2e tour : le triangle ▶ fermé à côté de valeurs déjà affichées laissait croire
+                  le repli ouvert ; les valeurs supposées d'abord, puis une action nommée avec sa flèche ▾ / ▴. */}
+              <summary className="cursor-pointer list-none text-sm font-medium text-navy-700 [&::-webkit-details-marker]:hidden">
+                <span data-actuellement className="block text-xs font-normal text-navy-600">
                   <span className="block">{lib.actuellement}{dp}</span>
                   {avances.map((i) => <span key={i.id} data-suppose className="block pl-2">{i.label}{dp} <span className="font-semibold text-navy-900">{valeurAffichee(i, v[i.id])}</span></span>)}
-                </span></summary>
+                </span>
+                <span data-action-repli className="mt-1 inline-block text-accent-700 underline">{lib.plusDeReglages} <span aria-hidden="true" className="inline-block group-open:rotate-180">▾</span></span></summary>
               <div className="mt-3 space-y-3">{avances.map(champ)}</div>
             </details>
           )}
@@ -88,7 +91,7 @@ export default function MiniSim({ kind, lang = 'en', href, title, idPrefix = 'm'
           {out.alert && <p data-alerte role="note" className="mt-2 border-l-4 border-amber-500 pl-2 text-sm font-semibold text-navy-900">{out.alert}</p>}
           <table className="mt-3 w-full text-sm"><tbody className="divide-y divide-navy-200">
             {out.rows.map(([l, x]) => (valeurEnMots(x)
-              ? <tr key={l}><td colSpan={2} className="py-1.5 text-navy-600 hyphens-auto [overflow-wrap:anywhere]">{l}<span className="block font-medium text-navy-900">{x}</span></td></tr>
+              ? <tr key={l}><td colSpan={2} className="py-1.5 text-navy-600 hyphens-auto [overflow-wrap:anywhere]">{l}<span className="block font-medium text-navy-900 hyphens-none">{x}</span></td></tr>
               : <tr key={l}><td className="py-1.5 pr-3 text-navy-600 hyphens-auto [overflow-wrap:anywhere]">{l}</td><td className="tabular-nums py-1.5 text-right text-navy-900 [overflow-wrap:break-word]">{x}</td></tr>))}
           </tbody></table>
           {out.note && <p className="mt-2 text-xs text-navy-500">{out.note}</p>}

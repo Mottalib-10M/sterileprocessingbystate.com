@@ -43,14 +43,14 @@ export default function StateFinder({ state: s0 = 'Pennsylvania', idPrefix = 'sf
           <tr><td className="py-2 pr-3 text-navy-600">Who is exempt</td><td className="py-2 text-navy-900">{st.grandfather ?? 'No exemption for staff already in post is written in the rule'}</td></tr>
           <tr><td className="py-2 pr-3 text-navy-600">Facilities covered</td><td className="py-2 text-navy-900">{st.facilities}</td></tr>
           <tr><td className="py-2 pr-3 text-navy-600">Continuing education</td><td className="py-2 text-navy-900">{st.ceHours ? `${st.ceHours} hours a year: ${st.ceWho.charAt(0).toLowerCase()}${st.ceWho.slice(1)}` : st.ceWho}</td></tr>
-          <tr><td className="py-2 pr-3 text-navy-600">Law or rule</td><td className="py-2 text-navy-900">{st.citation} ({st.instrument.toLowerCase()})</td></tr>
+          <tr><td className="py-2 pr-3 text-navy-600">Official text</td><td className="py-2 text-xs text-navy-600">{st.citation} ({st.instrument.toLowerCase()})</td></tr>
         </> : <>
           <tr><td className="py-2 pr-3 text-navy-600">State law or rule</td><td className="py-2 text-navy-900">None found requiring certification of central service technicians</td></tr>
           {bill && <tr><td className="py-2 pr-3 text-navy-600">Bill or effort</td><td className="py-2 text-navy-900">{bill.what}: {bill.status.charAt(0).toLowerCase()}{bill.status.slice(1)}</td></tr>}
           <tr><td className="py-2 pr-3 text-navy-600">What applies instead</td><td className="py-2 text-navy-900">Your employer’s job requirements; many hospitals ask for the CRCST or the CSPDT anyway</td></tr>
         </>}
       </tbody></table>
-      <p className="text-xs text-navy-700">Statutes and rules read on {dateL(P.retrieved_at)}. The other {OTHER_STATES} states and DC have no such text, according to HSPA’s list of state laws and our own search.</p>
+      <p className="text-xs text-navy-700">Statutes and rules read on {dateL(P.retrieved_at)}. The other {OTHER_STATES} states and DC have no such law, according to HSPA’s list of state laws and our own search.</p>
     </div>
   );
 }

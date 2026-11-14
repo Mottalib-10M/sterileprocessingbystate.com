@@ -20,7 +20,7 @@ export default definePage({
     ],
     body: (h) => `
 <h2>CRCST storage and distribution in short</h2>
-${h.table(['Topic', 'Key idea'], [['Event-related sterility', 'Sterile until an event compromises the package'], ['Storage conditions', 'Distance from floor, ceiling and outside walls; controlled environment'], ['Stock rotation', 'FIFO; PAR levels set restock quantities'], ['Transport', 'Closed or covered carts, separated clean and soiled'], ['Recalls', 'Locate, remove and document the items concerned'], ['Patient care equipment', 'Cleaned, inspected, maintenance current, tracked, stored clean']], `Our summary of sections 5 and 6 of the CRCST content outline, read on ${h.read}.`, ['l', 'l'])}
+${h.revision(h.table(['Topic', 'Key idea'], [['Event-related sterility', 'Sterile until an event compromises the package'], ['Storage conditions', 'Distance from floor, ceiling and outside walls; controlled environment'], ['Stock rotation', 'FIFO; PAR levels set restock quantities'], ['Transport', 'Closed or covered carts, separated clean and soiled'], ['Recalls', 'Locate, remove and document the items concerned'], ['Patient care equipment', 'Cleaned, inspected, maintenance current, tracked, stored clean']], `Our summary of sections 5 and 6 of the CRCST content outline, read on ${h.read}.`, ['l', 'l']))}
 <h2>Patient care equipment questions</h2>
 <p>The second quiz on this page draws from section 6 only. Its questions are short scenarios about pumps, cords and returned devices. The answer is almost always to take a doubtful device out of circulation and send it to the right team, never to repair or release it yourself.</p>
 <h2>Last section</h2>

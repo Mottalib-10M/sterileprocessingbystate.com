@@ -19,7 +19,7 @@ export default definePage({
     ],
     body: (h) => `
 <h2>CRCST sterilization: the three layers of monitoring</h2>
-${h.table(['Monitor', 'What it shows', 'When'], [['Physical', 'Time, temperature, pressure of the cycle', 'Every cycle, read by the operator'], ['Chemical', 'Exposure to the process; internal indicators show conditions inside the pack', 'Every package'], ['Biological', 'Whether the cycle killed highly resistant spores', 'Routinely, and for every load with an implant'], ['Air removal test', 'Bowie-Dick: air removal in a pre-vacuum sterilizer', 'Daily, empty chamber, first cycle']], `Our summary of section 4 of the CRCST content outline, read on ${h.read}.`, ['l', 'l', 'l'])}
+${h.revision(h.table(['Monitor', 'What it shows', 'When'], [['Physical', 'Time, temperature, pressure of the cycle', 'Every cycle, read by the operator'], ['Chemical', 'Exposure to the process; internal indicators show conditions inside the pack', 'Every package'], ['Biological', 'Whether the cycle killed highly resistant spores', 'Routinely, and for every load with an implant'], ['Air removal test', 'Bowie-Dick: air removal in a pre-vacuum sterilizer', 'Daily, empty chamber, first cycle']], `Our summary of section 4 of the CRCST content outline, read on ${h.read}.`, ['l', 'l', 'l']))}
 <h2>Reading scenario questions</h2>
 <p>When a question describes something wrong after a cycle, a wet tray, a printout outside its range, a positive biological indicator, the answer starts with not releasing the load and following the policy for recall and investigation. Options that dry, re-label or ship the items to save time are there to be rejected.</p>
 <h2>Next sections</h2>

@@ -27,7 +27,7 @@ export default definePage({
 <li><strong>Rinse and dry.</strong> Final rinse of critical devices with treated water, then drying before inspection.</li>
 </ol>
 <h2>Disinfection levels</h2>
-${h.table(['Spaulding class', 'Contact', 'Minimum process'], [['Critical', 'Sterile tissue, vascular system', 'Sterilization'], ['Semi-critical', 'Mucous membranes, non-intact skin', 'High-level disinfection'], ['Non-critical', 'Intact skin', 'Low-level disinfection']], 'Spaulding classification as used in sterile processing teaching; our summary.', ['l', 'l', 'l'])}
+${h.revision(h.table(['Spaulding class', 'Contact', 'Minimum process'], [['Critical', 'Sterile tissue, vascular system', 'Sterilization'], ['Semi-critical', 'Mucous membranes, non-intact skin', 'High-level disinfection'], ['Non-critical', 'Intact skin', 'Low-level disinfection']], 'Spaulding classification as used in sterile processing teaching; our summary.', ['l', 'l', 'l']))}
 <h2>Where people lose points</h2>
 <p>The classic errors are choosing a fix for a symptom instead of the cleaning step that comes first, and confusing disinfection with sterilization. Read the item described: what does it touch on the patient? That decides the class and the process. Next, try ${h.a('crcst-preparation-packaging-questions', 'section 3, preparation and packaging')}.</p>`,
   },

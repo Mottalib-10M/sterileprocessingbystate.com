@@ -24,6 +24,6 @@ ${h.table(['Date', 'What happens'], [['June 14, 2025', 'Governor signs Laws 2025
 <h2>Who the law leaves out</h2>
 <p>${h.state('minnesota').extra.split('. ').slice(1).join('. ')} The facilities covered are hospitals and ambulatory surgical centers, as in Pennsylvania and Tennessee.</p>
 <h2>Getting ready before 2028</h2>
-<p>If you plan to change jobs in 2028 or later, the credential will be a condition within two years. Earning it before then costs the same as later and makes you employable everywhere. ${h.calc2('The second calculator on this page')} adds the exam fee, retakes and renewals; the ${h.a('sterile-processing-certification-cost', 'cost page')} explains each line. Minnesota is the newest of the seven texts, so check the ${h.a('sterile-processing-certification-by-state', 'state overview')} for any change before you rely on these dates.</p>`,
+<p>If you plan to change jobs in 2028 or later, the credential will be a condition within two years. Earning it before then costs the same as later and makes you employable everywhere. ${h.calc2('The second calculator on this page')} adds the exam fee, retakes and renewals; the ${h.a('sterile-processing-certification-cost', 'cost page')} explains each line. Minnesota is the newest of the seven laws, so check the ${h.a('sterile-processing-certification-by-state', 'state overview')} for any change before you rely on these dates.</p>`,
   },
 });

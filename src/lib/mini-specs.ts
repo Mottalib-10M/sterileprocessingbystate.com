@@ -51,19 +51,23 @@ const SPECS: Record<string, () => MiniSpec> = {
   }),
   cost: () => ({
     title: 'What certification costs you', cta: 'Full cost breakdown',
-    exemple: (v) => `Example for the ${['', 'CRCST', 'CSPDT', 'CRCST and CSPDT'][clamp(Math.round(v.r ?? 1), 1, 3)]} exam, ${plural(Math.round(v.a ?? 1), 'attempt')}, no paid course`,
+    exemple: (v) => `Example for the ${['', 'CRCST', 'CSPDT', 'CRCST and CSPDT'][clamp(Math.round(v.r ?? 1), 1, 3)]} exam, ${plural(Math.round(v.a ?? 1), 'attempt')}, no paid course${Math.round(v.yr ?? 0) > 0 ? `, plus ${plural(Math.round(v.yr ?? 0), 'year')} of renewal` : ''}`,
     inputs: [
       { id: 'r', label: 'Certification you aim for', def: 1, options: [{ value: '1', label: 'CRCST (HSPA)' }, { value: '2', label: 'CSPDT (CBSPD)' }, { value: '3', label: 'Both' }] },
       { id: 'a', label: 'Exam attempts you budget for', def: 1, max: 5 },
       { id: 'c', label: 'Price of a training course', def: 0, unit: '$', max: 10000, avance: true, help: 'Neither exam requires one' },
-      { id: 'yr', label: 'Years of renewal to include', def: 1, max: 10, avance: true },
+      { id: 'yr', label: 'Years of renewal to include', def: 1, max: 10 },
     ],
     run: (v) => {
       const route = (['crcst', 'cspdt', 'both'] as const)[clamp(Math.round(v.r ?? 1), 1, 3) - 1];
       const c = examCost(route, v.a ?? 1, v.c ?? 0, v.yr ?? 0);
+      // Testeurs naïfs 2026-11-14, 2e tour : « Total to budget $240 » lu comme le prix de l'examen ($140) ;
+      // le total dit ce qu'il contient et la ligne « Exam fees only » vient en premier.
+      const exams = c.lines.filter((l) => / exam /.test(l.label + ' ')).reduce((x, l) => x + l.amount, 0);
+      const more = c.total > exams;
       return {
-        head: ['Total to budget', money(c.total)],
-        rows: c.lines.map((l) => [l.label, money(l.amount)] as [string, string]),
+        head: [more ? `Total: exam${route === "both" ? "s" : ""}${c.years ? ` and ${plural(c.years, 'year')} of renewal` : ''}${v.c ? ', course' : ''}` : 'Total to budget', money(c.total)],
+        rows: [...(more ? [['Exam fees only', money(exams)] as [string, string]] : []), ...c.lines.map((l) => [l.label, money(l.amount)] as [string, string])],
         alert: route !== 'crcst' ? `CBSPD fee: ${money(CSPDT.feeWeb)} on its exam page, ${money(CSPDT.feeBulletin)} in its 2026 bulletin` : undefined,
         note: `Fees read on ${dateL(P.retrieved_at)} in the HSPA handbook and on the CBSPD pages. Travel, books and lost work hours are not counted.`,
       };
@@ -71,14 +75,14 @@ const SPECS: Record<string, () => MiniSpec> = {
   }),
   hours: () => ({
     title: 'Your 400 hands-on hours for the CRCST', cta: 'CRCST requirements',
-    exemple: (v) => `Example for ${n0((v.d1 ?? 0) + (v.d2 ?? 0) + (v.d3 ?? 0) + (v.d4 ?? 0) + (v.d5 ?? 0))} hours done and ${n0(v.w ?? 0)} hours a week`,
+    exemple: (v) => `Example for ${n0((v.d1 ?? 0) + (v.d2 ?? 0) + (v.d3 ?? 0) + (v.d4 ?? 0) + (v.d5 ?? 0))} hours already logged and ${n0(v.w ?? 0)} hours a week`,
     inputs: [
       { id: 'w', label: 'Hours a week in a sterile processing department', def: 20, unit: 'h', max: 60 },
-      { id: 'd1', label: 'Decontamination hours done', def: 40, unit: 'h', max: 400, avance: true },
-      { id: 'd2', label: 'Preparing and packaging hours done', def: 40, unit: 'h', max: 400, avance: true },
-      { id: 'd3', label: 'Sterilization and disinfection hours done', def: 20, unit: 'h', max: 400, avance: true },
-      { id: 'd4', label: 'Storage and distribution hours done', def: 0, unit: 'h', max: 400, avance: true },
-      { id: 'd5', label: 'Quality assurance hours done', def: 0, unit: 'h', max: 400, avance: true },
+      { id: 'd1', label: 'Hours already logged: decontamination', def: 40, unit: 'h', max: 400 },
+      { id: 'd2', label: 'Hours already logged: preparing and packaging', def: 40, unit: 'h', max: 400 },
+      { id: 'd3', label: 'Hours already logged: sterilization and disinfection', def: 20, unit: 'h', max: 400 },
+      { id: 'd4', label: 'Hours already logged: storage and distribution', def: 0, unit: 'h', max: 400 },
+      { id: 'd5', label: 'Hours already logged: quality assurance', def: 0, unit: 'h', max: 400 },
     ],
     run: (v) => {
       const h = handsOn([v.d1 ?? 0, v.d2 ?? 0, v.d3 ?? 0, v.d4 ?? 0, v.d5 ?? 0], v.w ?? 0);
@@ -116,21 +120,24 @@ const SPECS: Record<string, () => MiniSpec> = {
     ],
     run: (v) => {
       const r = crcstRenewal(v.m ?? 3, v.y ?? 2025, P.retrieved_at);
+      const dueYear = Number(r.due.slice(0, 4)), y0 = Math.round(v.y ?? 2025);
       return {
         head: ['Renewal due by', dateL(r.due)],
+        // Testeurs naïfs 2026-11-14, 2e tour : « renew each year » mais une date un an plus loin que prévu.
+        alert: dueYear > y0 + 1 ? `Your ${mName(v.m)} ${dueYear - 1} renewal date has already passed, so this is the next one.` : undefined,
         rows: [['Continuing education credits', `${r.ce} in the year before`], ['Fee', `${money(r.fee)} alone, or ${money(r.feeMember)} with an HSPA membership included`], ['If you miss it: grace period until', dateL(r.grace)]],
         note: `Next due date after ${dateL(P.retrieved_at)}, assuming earlier renewals were made on time. During the ${CRCST.renewal.graceWeeks}-week grace period you are not certified and may not use the title; after it, the exam must be taken again.`,
       };
     },
   }),
   points: () => ({
-    title: 'Your CBSPD recertification points', cta: 'CBSPD recertification',
+    title: 'Your CSPDT recertification points (CBSPD)', cta: 'CSPDT recertification (CBSPD)',
     exemple: (v) => `Example for ${n0(v.ft ?? 0)} years full time and ${n0(v.ce ?? 0)} education points`,
     inputs: [
       { id: 'ft', label: 'Years worked full time since certification', def: 5, max: 5, decimals: 1 },
-      { id: 'ce', label: 'Approved education points earned', def: 30, max: 300 },
+      { id: 'ce', label: 'Education points approved by the CBSPD', def: 30, max: 300, help: 'One point per hour of a course, webinar or session the CBSPD has approved' },
       { id: 'pt', label: 'Years part time (20 hours a week or more)', def: 0, max: 5, decimals: 1, avance: true },
-      { id: 'pd', label: 'Years per diem (6 days a month or more)', def: 0, max: 5, decimals: 1, avance: true },
+      { id: 'pd', label: 'Years on call, per diem (6 days a month or more)', def: 0, max: 5, decimals: 1, avance: true },
     ],
     run: (v) => {
       const p = cbspdPoints(v.ft ?? 0, v.pt ?? 0, v.pd ?? 0, v.ce ?? 0);
@@ -143,10 +150,10 @@ const SPECS: Record<string, () => MiniSpec> = {
     },
   }),
   window: () => ({
-    title: 'Next CBSPD exam window', cta: 'CBSPD exam dates',
+    title: 'Next CSPDT exam window (CBSPD)', cta: 'CSPDT exam dates (CBSPD)',
     exemple: (v) => `Example for an application ready in ${mName(v.m)} ${v.y}`,
     inputs: [
-      { id: 'm', label: 'Month your application is ready', def: 12, options: MONTH_OPT },
+      { id: 'm', label: 'Month you can mail your completed application', def: 12, options: MONTH_OPT },
       { id: 'y', label: 'Year', def: 2026, options: yearOpt(2026, 2027) },
     ],
     run: (v) => {
@@ -225,7 +232,7 @@ const SPECS: Record<string, () => MiniSpec> = {
       return {
         head: ['You can sit', cspdt === 'Yes' ? 'CRCST or CSPDT' : 'CRCST'],
         rows: [['CRCST (HSPA)', crcst], ['CSPDT (CBSPD)', cspdt === 'Yes' ? `Yes (${mo >= 12 ? '12 months of sterile processing work' : 'course with 70 or more'})` : `Not yet: ${Math.max(0, 12 - mo)} more months or a course`]],
-        note: 'The CBSPD also accepts 6 months of allied health work plus 6 months in sterile processing, or 12 months selling or servicing sterile processing products. HSPA needs no course, only the 400 hours before or after the exam.',
+        note: 'The CBSPD also accepts 6 months of allied health work (a health job other than doctor or nurse) plus 6 months in sterile processing, or 12 months selling or servicing sterile processing products. HSPA needs no course, only the 400 hours before or after the exam.',
       };
     },
   }),

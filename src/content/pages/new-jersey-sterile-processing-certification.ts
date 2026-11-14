@@ -24,6 +24,6 @@ ${h.table(['Paragraph of 8:43G-8.2', 'Requirement'], [['(a)', 'A full-time direc
 <h2>A rule, not a law: why it matters</h2>
 <p>A licensing rule is enforced through hospital inspections rather than against the technician. In practice the effect is the same for a new hire: the hospital must show that every person in the department is certified or still inside the three-year window. The date of the last amendment is not the date the duty began; New Jersey was described as the first state to require certification as early as 2004.</p>
 <h2>Leaders are covered too</h2>
-<p>New Jersey is the only one of the seven texts to put the department head in the rule, with both experience and certification. A technician aiming at a lead or supervisor role in a New Jersey hospital should plan for it. The cost of the technician exam is in ${h.calc2('the second calculator on this page')}; the ${h.a('sterile-processing-certification-cost', 'cost page')} compares both routes.</p>`,
+<p>New Jersey is the only one of the seven laws to put the department head in the rule, with both experience and certification. A technician aiming at a lead or supervisor role in a New Jersey hospital should plan for it. The cost of the technician exam is in ${h.calc2('the second calculator on this page')}; the ${h.a('sterile-processing-certification-cost', 'cost page')} compares both routes.</p>`,
   },
 });

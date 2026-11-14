@@ -19,7 +19,7 @@ export default definePage({
     ],
     body: (h) => `
 <h2>CRCST preparation and packaging checklist</h2>
-${h.table(['Step', 'What is checked'], [['Inspection', 'Clean, works, not damaged; magnification and light'], ['Function tests', 'Cutting edges, ratchets, alignment, insulation'], ['Assembly', 'Count sheet, tip protectors, lubrication per instructions'], ['Packaging choice', 'Compatible with the sterilization method'], ['Indicators', 'Internal indicator where penetration is hardest'], ['Labeling', 'Contents, assembler, date, load information for traceability']], `Our summary of section 3 of the CRCST content outline, read on ${h.read}.`, ['l', 'l'])}
+${h.revision(h.table(['Step', 'What is checked'], [['Inspection', 'Clean, works, not damaged; magnification and light'], ['Function tests', 'Cutting edges, ratchets, alignment, insulation'], ['Assembly', 'Count sheet, tip protectors, lubrication per instructions'], ['Packaging choice', 'Compatible with the sterilization method'], ['Indicators', 'Internal indicator where penetration is hardest'], ['Labeling', 'Contents, assembler, date, load information for traceability']], `Our summary of section 3 of the CRCST content outline, read on ${h.read}.`, ['l', 'l']))}
 <h2>Questions that trip people up</h2>
 <p>Many section 3 questions offer one answer that saves time and one that protects the patient's instrument set. If an instrument is damaged, it does not go in the tray "just this once". If a loaned tray arrives, what matters is its content and the case it is for, not the vendor's logo. Where you write on a pouch, where the indicator goes and which fold is standard are pure recall: learn them once.</p>
 <h2>Next section</h2>

@@ -21,7 +21,7 @@ export default definePage({
     body: (h) => `
 <h2>How to become a sterile processing technician in five steps</h2>
 <ol>
-<li><strong>Check your state.</strong> In ${h.a('sterile-processing-certification-by-state', 'seven states')} a text sets how long you have after hire to certify, from 18 to 36 months. Elsewhere the employer decides.</li>
+<li><strong>Check your state.</strong> In ${h.a('sterile-processing-certification-by-state', 'seven states')} a law sets how long you have after hire to certify, from 18 to 36 months. Elsewhere the employer decides.</li>
 <li><strong>Get into a department.</strong> A trainee job, an externship arranged by a school, or volunteering in a sterile processing department all count for HSPA hours if a manager signs them.</li>
 <li><strong>Choose your exam.</strong> The CRCST is taken any day at a Prometric test center; the CSPDT in four weeks a year. Both are national.</li>
 <li><strong>Apply and sit it.</strong> HSPA processes an application in about ${h.C.processingWeeks} weeks and then gives ${h.C.windowDays} days to take the exam.</li>

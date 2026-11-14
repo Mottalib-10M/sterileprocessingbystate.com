@@ -20,7 +20,7 @@ export default definePage({
     ],
     body: (h) => `
 <h2>CRCST professional skills: four themes</h2>
-${h.table(['Theme', 'What the right answer usually does'], [['Privacy', 'Shares patient details only as the work needs'], ['Priorities', 'Serves the most time-critical patient need first'], ['Communication', 'Listens, checks the facts, corrects, reports'], ['Growth', 'Keeps up education and the credential, learns terms']], `Our summary of section 7 of the CRCST content outline, read on ${h.read}.`, ['l', 'l'])}
+${h.revision(h.table(['Theme', 'What the right answer usually does'], [['Privacy', 'Shares patient details only as the work needs'], ['Priorities', 'Serves the most time-critical patient need first'], ['Communication', 'Listens, checks the facts, corrects, reports'], ['Growth', 'Keeps up education and the credential, learns terms']], `Our summary of section 7 of the CRCST content outline, read on ${h.read}.`, ['l', 'l']))}
 <h2>Why this section is easy points</h2>
 <p>Unlike the technical sections, section 7 rarely needs a fact you have never seen. Most questions describe a work situation and ask for the professional reaction: protect information, put the patient first, report through the right channel, keep learning. Reading each option slowly and picking the one a good supervisor would expect is usually enough.</p>
 <h2>Word parts worth knowing</h2>
