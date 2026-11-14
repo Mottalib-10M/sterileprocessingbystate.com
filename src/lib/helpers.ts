@@ -30,6 +30,24 @@ export function helpers(lang: Locale = 'en', strict = false) {
   const st = (id: string) => stateById(id)!;
   return {
     lang, a, ext, src, usd, num, pc, P, date,
+    /** Link to the page's first calculator (the one under the introduction), never "above" or "below" (testeurs naïfs 2026-11-14). */
+    calc1: (text = 'the calculator at the top of this page') => `<a href="#calculator">${text}</a>`,
+    /** Link to the page's second calculator (under the summary). */
+    calc2: (text = 'the second calculator on this page') => `<a href="#calculator-2">${text}</a>`,
+    /** States whose text is in force for today's hires, and the ones still to start (Minnesota from 2028). */
+    inForce: STATES.filter((s) => s.status !== 'enacted-future'),
+    upcoming: STATES.filter((s) => s.status === 'enacted-future'),
+    /** CBSPD exam windows with their status on the build day: the next one first, then later ones, past ones last. */
+    windows: () => {
+      const today = [new Date().toISOString().slice(0, 10), P.retrieved_at].sort()[1];
+      const all = [...(CSPDT.windows2026 as string[][]), ...(CSPDT.windows2027 as string[][])].map(([start, end, deadline]) => ({ start, end, deadline, status: end < today ? 'past' : 'later' }));
+      const nxt = all.find((w) => w.status === 'later' && w.deadline >= today) ?? all.find((w) => w.status === 'later');
+      if (nxt) nxt.status = 'next';
+      const rank = { next: 0, later: 1, past: 2 } as Record<string, number>;
+      return all.sort((x, y) => rank[x.status] - rank[y.status] || x.start.localeCompare(y.start));
+    },
+    /** State texts that set yearly continuing education hours. */
+    withCe: STATES.filter((s) => s.ceHours),
     /** Day the statutes and handbooks were read: "November 13, 2026". */
     read: dateL(P.retrieved_at),
     table: (h: string[], r: Array<Array<string | number>>, c?: string, al: Array<'l' | 'r'> = []) => table(h, r, c, al),
@@ -46,7 +64,7 @@ export function helpers(lang: Locale = 'en', strict = false) {
     lawLine: (id: string) => `${st(id).citation}, in force since ${dateL(st(id).effective)}`,
     certifyBy: (id: string, hireISO: string) => dateL(addMonths(hireISO, st(id).graceMonths)),
     /** Seven-state summary table. */
-    stateTable: (caption?: string) => table(['State', 'Text', 'In force', 'Time after hire', 'CE a year'], STATES.map((s) => [a(statePage(s.id), s.name), s.citation, s.status === 'enacted-future' ? `${dateL(s.effective)}, for hires from ${dateL(s.bitesFrom ?? s.effective)}` : dateL(s.effective), `${s.graceMonths} months`, s.ceHours ? `${s.ceHours} h` : 'not set']), caption, ['l', 'l', 'l', 'r', 'r']),
+    stateTable: (caption?: string) => table(['State', 'Law or rule', 'In force', 'Time after hire', 'Continuing education a year'], STATES.map((s) => [a(statePage(s.id), s.name), s.citation, s.status === 'enacted-future' ? `${dateL(s.effective)}, for hires from ${dateL(s.bitesFrom ?? s.effective)}` : dateL(s.effective), `${s.graceMonths} months`, s.ceHours ? `${s.ceHours} hours` : 'no hours set by the rule']), caption, ['l', 'l', 'l', 'r', 'r']),
     pr: (e: 'crcst' | 'cspdt', y: number) => passRate(e, y),
     statsTable: (e: 'crcst' | 'cspdt', caption?: string) => table(['Year', 'Candidates', 'Passed', 'Failed', 'Pass rate'], (P.stats[e].years as number[][]).map(([y, p, f]) => [String(y), p + f, p, f, pct(p / (p + f), 'en', 1)]), caption, ['l', 'r', 'r', 'r', 'r']),
   };

@@ -5,11 +5,11 @@ export default definePage({
   related: ['crcst-preparation-packaging-questions', 'crcst-departmental-considerations-questions', 'crcst-practice-test', 'crcst-mock-exam'],
   sources: ['hspa_outline'],
   en: {
-    slug: 'crcst-decontamination-questions', nav: '2. Cleaning and decontamination', card: 'Spaulding classes, manual and mechanical cleaning, PPE, biofilm, water and disinfectant tests.',
+    slug: 'crcst-decontamination-questions', nav: '2. Cleaning and decontamination', card: 'Spaulding classes, manual and mechanical cleaning, protective equipment, biofilm, water and disinfectant tests.',
     title: 'CRCST Decontamination Questions: Section 2, Explained',
     description: 'CRCST decontamination practice questions, section 2 at 21%: Spaulding classes, manual and ultrasonic cleaning, PPE, biofilm, water quality and MEC tests.',
     h1: 'CRCST decontamination practice questions',
-    intro: 'CRCST decontamination questions fill section 2, 21% of the exam or about 26 scored questions: answer ten above and read why each answer is right.',
+    intro: 'CRCST decontamination questions fill section 2 of the Certified Registered Central Service Technician exam, 21% or about 26 scored questions. Answer the ten practice questions here and read why each answer is right.',
     resume: (h) => `Section 2 of the outline, cleaning, decontamination and disinfection, is one of the three heaviest at ${h.pc(h.domains[1].share)}, about ${h.num(h.domains[1].share * h.C.scored)} scored questions. Its logic is that nothing can be disinfected or sterilized if it is not clean first. Questions follow the instrument from the point of use: kept moist so soil does not dry, transported closed, received in decontamination by a technician in full protective equipment. They ask how hinged instruments are opened, how brushing is done under water to limit aerosols, how detergent is diluted by its instructions, what an ultrasonic cleaner does through cavitation, how a washer disinfector is checked with a cleaning test. They test the Spaulding classification, critical, semi-critical and non-critical, which decides whether an item needs sterilization, high-level disinfection or low-level disinfection. They also cover biofilm, the water used for the final rinse, the bloodborne pathogens rule that protects workers, and the concentration test for reused high-level disinfectants.`,
     faqs: (h) => [
       { q: 'What are the three Spaulding classes?', a: 'Critical items enter sterile tissue or the bloodstream and are sterilized. Semi-critical items touch mucous membranes or non-intact skin and need at least high-level disinfection. Non-critical items touch only intact skin and need low-level disinfection. Exam questions often describe an item and ask for its class, so start from what the item touches on the patient.' },
@@ -21,7 +21,7 @@ export default definePage({
 <h2>CRCST decontamination in the order of the work</h2>
 <ol>
 <li><strong>Point of use.</strong> Gross soil wiped, instruments kept moist, sharps protected, closed transport.</li>
-<li><strong>Receiving.</strong> Full PPE: fluid-resistant gown, gloves, face protection. Single-use items separated and discarded.</li>
+<li><strong>Receiving.</strong> Full protective equipment: fluid-resistant gown, gloves, face protection. Single-use items separated and discarded.</li>
 <li><strong>Manual cleaning.</strong> Hinged instruments open, detergent at the right dilution and temperature, brushing under water, lumens brushed and flushed.</li>
 <li><strong>Mechanical cleaning.</strong> Ultrasonic cleaner, washer disinfector, cart washer, each checked with its own tests.</li>
 <li><strong>Rinse and dry.</strong> Final rinse of critical devices with treated water, then drying before inspection.</li>

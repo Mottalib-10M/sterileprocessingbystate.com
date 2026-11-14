@@ -36,12 +36,15 @@ interface Props { kind: string; lang?: string; href?: string; title?: string; id
   /** Champs fixés par la page : gardés à `defaults[id]` (sinon `def`), non affichés comme champs, nommés sous le formulaire. */
   locked?: string[];
   /** Ce que suppose l'exemple sur cette page ; remplace `spec.exemple`. */
-  exemple?: string }
+  exemple?: string;
+  /** Adresse de la page qui porte le calculateur : un lien de réponse qui y renvoie est remplacé par le lien général
+   *  (testeurs naïfs 2026-11-14 : « Connecticut rules in full » sur la page Connecticut elle-même). */
+  here?: string }
 
 /** Une valeur en mots longue (« Not eligible: 150 hours needed ») passe sous son libellé au lieu d'être coincée à droite. */
 export const valeurEnMots = (x: string) => x.length > 12 && /\p{L}{3}/u.test(x);
 
-export default function MiniSim({ kind, lang = 'en', href, title, idPrefix = 'm', defaults = {}, saisiParLeLecteur = false, locked = [], exemple }: Props) {
+export default function MiniSim({ kind, lang = 'en', href, title, idPrefix = 'm', defaults = {}, saisiParLeLecteur = false, locked = [], exemple, here }: Props) {
   const spec = getSpec(kind, lang);
   const [v, setV] = useState<Record<string, number>>(() => Object.fromEntries(spec.inputs.map((i) => [i.id, defaults[i.id] ?? i.def])));
   const [touched, setTouched] = useState<Record<string, boolean>>(() => (saisiParLeLecteur ? Object.fromEntries(spec.inputs.map((i) => [i.id, true])) : {}));
@@ -56,7 +59,8 @@ export default function MiniSim({ kind, lang = 'en', href, title, idPrefix = 'm'
   const visibles = spec.inputs.filter((i) => !locked.includes(i.id) && (!i.showIf || i.showIf(v)));
   const fixes = spec.inputs.filter((i) => locked.includes(i.id));
   const avances = visibles.filter((i) => i.avance);
-  const lien: [string, string] | undefined = out.go ?? (href && spec.cta ? [`${spec.cta} →`, href] : undefined);
+  const go = out.go && out.go[1] !== here ? out.go : undefined;
+  const lien: [string, string] | undefined = go ?? (href && href !== here && spec.cta ? [`${spec.cta} →`, href] : undefined);
   return (
     <div data-chrome data-mini={kind} className="not-prose rechner-mini my-8 rounded-xl border border-accent-200 bg-white p-4 shadow-sm sm:p-5">
       <p className="text-base font-semibold text-navy-900">{title ?? spec.title}</p>
@@ -90,7 +94,7 @@ export default function MiniSim({ kind, lang = 'en', href, title, idPrefix = 'm'
           {out.note && <p className="mt-2 text-xs text-navy-500">{out.note}</p>}
         </div>
       </div>
-      {lien && <a data-lien-reponse={out.go ? '' : undefined} href={lien[1]} className="mt-4 inline-block text-sm font-medium text-accent-700 hover:underline">{lien[0]}</a>}
+      {lien && <a data-lien-reponse={go ? '' : undefined} href={lien[1]} className="mt-4 inline-block text-sm font-medium text-accent-700 hover:underline">{lien[0]}</a>}
     </div>
   );
 }
@@ -98,5 +102,8 @@ export default function MiniSim({ kind, lang = 'en', href, title, idPrefix = 'm'
 /** Valeur d'un champ telle que le lecteur la lit : libellé de l'option choisie, ou nombre et unité. */
 export function valeurAffichee(i: MiniInput, x: number): string {
   if (i.options) return i.options.find((o) => o.value === String(x))?.label ?? String(x);
-  return `${formatNumber(x, Number.isInteger(x) ? 0 : (i.decimals ?? 0))}${i.unit ? `\u00a0${i.unit}` : ''}`;
+  const n = formatNumber(x, Number.isInteger(x) ? 0 : (i.decimals ?? 0));
+  // en-US: the dollar sign goes before the figure ("$0", not "0 $"), testeurs naïfs 2026-11-14
+  if (i.unit === '$') return '$' + n;
+  return `${n}${i.unit ? `\u00a0${i.unit}` : ''}`;
 }

@@ -10,6 +10,6 @@ const en = {
   footerPopular: 'Start here',
   notFound: 'There is no page at this address. The state finder, the certification deadline calculator and the exam pages start on the home page.',
   readMore: 'Read more', back: 'Home',
-  independent: 'Independent site, not HSPA, the CBSPD or a state agency. Applications, fees and exam bookings go through the certification body you choose.',
+  independent: 'Independent site, not a certification body or a state agency. Applications, fees and exam bookings go through the certification body you choose.',
 };
 export function t(_lang: Locale = 'en') { return en; }

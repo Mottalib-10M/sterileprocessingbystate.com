@@ -20,7 +20,6 @@ const mName = (m: number | undefined) => MONTHS[clamp(Math.round(m ?? 1), 1, 12)
 export const STATE_OPT = ALL_STATES.map((s, i) => ({ value: String(i + 1), label: s }));
 export const stateIdx = (name: string) => ALL_STATES.indexOf(name) + 1;
 const stateOf = (v: number | undefined) => ALL_STATES[clamp(Math.round(v ?? 1), 1, ALL_STATES.length) - 1];
-const YEAR = P.year;
 
 const SPECS: Record<string, () => MiniSpec> = {
   deadline: () => ({
@@ -46,7 +45,7 @@ const SPECS: Record<string, () => MiniSpec> = {
         head, rows,
         alert: st?.id === 'minnesota' && d.status === 'exempt' ? 'Minnesota’s duty starts with hires from January 1, 2028' : undefined,
         go: st ? [`${st.name} rules in full`, `/en/${st.id === 'new-jersey' ? 'new-jersey-sterile-processing-certification' : `${st.id}-central-service-technician-law`}/`] : ['States without a law', '/en/states-without-a-certification-law/'],
-        note: d.why,
+        note: `${d.why}${d.status === 'deadline' ? ' Counted from the 1st of the month you were hired: from your exact first day, the date moves later by the same number of days.' : ''}`,
       };
     },
   }),
@@ -104,7 +103,7 @@ const SPECS: Record<string, () => MiniSpec> = {
       return {
         head: ['400 hours must reach HSPA by', dateL(p.due)],
         rows: [['Six months after the exam', dateL(p.base)], ['With the extension', dateL(provisional(iso(v.y ?? 2027, v.m ?? 1, 1), true).due)], ['If the hours are late', 'provisional status is lost and a retake is needed']],
-        note: 'Dates use the 1st of the month you passed. The extension is requested by your SP manager before the provisional status ends, and only if you are working or volunteering in an SP department.',
+        note: 'Dates use the 1st of the month you passed. Your department manager requests the extension before the provisional status ends, and only if you are working or volunteering in a sterile processing department.',
       };
     },
   }),
@@ -116,11 +115,11 @@ const SPECS: Record<string, () => MiniSpec> = {
       { id: 'y', label: 'Year you were certified', def: 2025, options: yearOpt(2015, 2027) },
     ],
     run: (v) => {
-      const r = crcstRenewal(v.m ?? 3, v.y ?? 2025, YEAR);
+      const r = crcstRenewal(v.m ?? 3, v.y ?? 2025, P.retrieved_at);
       return {
         head: ['Renewal due by', dateL(r.due)],
-        rows: [['Continuing education credits', `${r.ce} in the year before`], ['Fee', `${money(r.fee)} (${money(r.feeMember)} with membership)`], ['Suspended, last chance to catch up', dateL(r.grace)]],
-        note: `Next due date from ${YEAR} on. During the ${CRCST.renewal.graceWeeks}-week grace period you are not certified and may not use the title; after it, the exam must be taken again.`,
+        rows: [['Continuing education credits', `${r.ce} in the year before`], ['Fee', `${money(r.fee)} alone, or ${money(r.feeMember)} with an HSPA membership included`], ['If you miss it: grace period until', dateL(r.grace)]],
+        note: `Next due date after ${dateL(P.retrieved_at)}, assuming earlier renewals were made on time. During the ${CRCST.renewal.graceWeeks}-week grace period you are not certified and may not use the title; after it, the exam must be taken again.`,
       };
     },
   }),
@@ -213,11 +212,11 @@ const SPECS: Record<string, () => MiniSpec> = {
   }),
   ready: () => ({
     title: 'Which exam you can sit now', cta: 'Compare the two certifications',
-    exemple: (v) => `Example for ${n0(v.mo ?? 0)} months of SPD work and ${n0(v.h ?? 0)} hands-on hours`,
+    exemple: (v) => `Example for ${n0(v.mo ?? 0)} months of sterile processing work and ${n0(v.h ?? 0)} hands-on hours`,
     inputs: [
       { id: 'mo', label: 'Months of full-time sterile processing work', def: 0, max: 120 },
-      { id: 'h', label: 'Hands-on hours in an SP department', def: 0, unit: 'h', max: 5000 },
-      { id: 'c', label: 'SP technician course passed with 70 or more', def: 1, options: [{ value: '1', label: 'Yes' }, { value: '0', label: 'No' }] },
+      { id: 'h', label: 'Hands-on hours in a sterile processing department', def: 0, unit: 'h', max: 5000 },
+      { id: 'c', label: 'Sterile processing course passed with 70 or more', def: 1, options: [{ value: '1', label: 'Yes' }, { value: '0', label: 'No' }] },
     ],
     run: (v) => {
       const mo = Math.max(0, v.mo ?? 0), h = Math.max(0, v.h ?? 0), c = (v.c ?? 0) === 1;
@@ -225,8 +224,8 @@ const SPECS: Record<string, () => MiniSpec> = {
       const cspdt = mo >= 12 || c ? 'Yes' : 'Not yet';
       return {
         head: ['You can sit', cspdt === 'Yes' ? 'CRCST or CSPDT' : 'CRCST'],
-        rows: [['CRCST (HSPA)', crcst], ['CSPDT (CBSPD)', cspdt === 'Yes' ? `Yes (${mo >= 12 ? '12 months of SP work' : 'course with 70 or more'})` : `Not yet: ${Math.max(0, 12 - mo)} more months or a course`]],
-        note: 'The CBSPD also accepts 6 months of allied health work plus 6 months in SP, or 12 months in SP product sales or service. HSPA needs no course, only the 400 hours before or after the exam.',
+        rows: [['CRCST (HSPA)', crcst], ['CSPDT (CBSPD)', cspdt === 'Yes' ? `Yes (${mo >= 12 ? '12 months of sterile processing work' : 'course with 70 or more'})` : `Not yet: ${Math.max(0, 12 - mo)} more months or a course`]],
+        note: 'The CBSPD also accepts 6 months of allied health work plus 6 months in sterile processing, or 12 months selling or servicing sterile processing products. HSPA needs no course, only the 400 hours before or after the exam.',
       };
     },
   }),

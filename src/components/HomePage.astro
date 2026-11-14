@@ -24,6 +24,9 @@ const cards = (g: (typeof GROUPS_ORDER)[number]) => PAGES.filter((p) => p.group 
 const href = (id: string) => (hasRoute(id, lang) ? route(id, lang) : route('home', lang));
 const a = (id: string, text: string) => `<a href="${href(id)}">${text}</a>`;
 const st = h.state;
+const WORDS = ['no', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight'];
+const nInForce = WORDS[h.inForce.length], nTexts = WORDS[h.STATES.length], nCe = WORDS[h.withCe.length];
+const mn = h.upcoming[0];
 const pr = h.pr('crcst', 2025), prD = h.pr('cspdt', 2025);
 const areasText = (C.handsOn.areas as Array<[string, number]>).map(([n, v]) => `${n.toLowerCase()} ${v}`).join(', ');
 const title = 'Sterile Processing Technician: Rules by State, CRCST, CSPDT';
@@ -37,28 +40,29 @@ const faqs = [
   { q: 'Is this site part of HSPA or the CBSPD?', a: 'No. Sterile Processing By State is published independently by Radif Partners. Applications, fees and exam bookings go through HSPA or the CBSPD, and state questions go to your employer or the state health department. The site sells nothing, needs no account, and the calculators run in your browser without sending what you type.' },
 ];
 const jsonLd = [websiteSchema(lang), organizationSchema(lang), webApplicationSchema({ name: 'Sterile processing certification state finder', description, path: route('home', lang), lang }), faqSchema(faqs, lang)];
-const resume = `A sterile processing technician, called a central service technician in most laws, reprocesses the reusable instruments of hospitals and surgery centers: cleaning, inspecting, packaging, sterilizing, storing and delivering them. No state issues its own license for the job. What exists is a national credential, the CRCST of the Healthcare Sterile Processing Association (HSPA) or the CSPDT of the Certification Board for Sterile Processing and Distribution (CBSPD), and seven states with a law or rule that makes one of them a condition of employment within a set time after hire. Six apply it today; Minnesota's reaches hires from 2028. The finder above tells you which text applies in your state, from when and what it asks. Every date, fee and rule on this site links to the statute, rule or handbook where it was read, on ${h.read}. This site is independent: it is not HSPA, the CBSPD or a state agency.`;
+const resume = `A sterile processing technician, called a central service technician in most laws, reprocesses the reusable instruments of hospitals and surgery centers: cleaning, inspecting, packaging, sterilizing, storing and delivering them. No state issues its own license for the job. What exists is a national credential, the CRCST of the Healthcare Sterile Processing Association (HSPA) or the CSPDT of the Certification Board for Sterile Processing and Distribution (CBSPD), and seven states with a law or rule that makes one of them a condition of employment within a set time after hire. ${nInForce.charAt(0).toUpperCase() + nInForce.slice(1)} apply it today; ${mn.name}'s reaches people hired from ${h.date(mn.bitesFrom ?? mn.effective)}. The finder above tells you which text applies in your state, from when and what it asks. Every date, fee and rule on this site links to the statute, rule or handbook where it was read, on ${h.read}. This site is independent: it is not HSPA, the CBSPD or a state agency.`;
 ---
 <PageLayout title={title} description={description} lang={lang} jsonLd={jsonLd} faqs={faqs} breadcrumbs={[]}>
   <header class="mb-3">
     <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-accent-600">Central service · sterile processing · 50 states and DC</p>
     <h1 class="mt-0 text-[1.75rem] font-bold text-navy-900 max-sm:leading-tight sm:text-3xl md:text-4xl">Sterile processing technician rules in your state</h1>
-    <p class="mt-2 text-base text-navy-700 sm:text-lg">A sterile processing technician must be certified in {h.STATES.length - 1} states today, within {st('pennsylvania').graceMonths} to {st('new-jersey').graceMonths} months of hire: pick your state below to see the text, the deadline and the credentials it accepts.</p>
+    <p class="mt-2 text-base text-navy-700 sm:text-lg">{nTexts.charAt(0).toUpperCase() + nTexts.slice(1)} states have a certification law for sterile processing technicians: {nInForce} apply it today, and {mn.name} from hires on {h.date(mn.bitesFrom ?? mn.effective)}. Pick your state for your answer: a new hire gets {st('pennsylvania').graceMonths} to {st('new-jersey').graceMonths} months to earn the CRCST or the CSPDT.</p>
+    <p class="mt-1 text-sm text-navy-700"><strong>CRCST</strong>: Certified Registered Central Service Technician, from HSPA, the Healthcare Sterile Processing Association. <strong>CSPDT</strong>: Certified Sterile Processing and Distribution Technician, from the CBSPD, the Certification Board for Sterile Processing and Distribution. State laws that name a credential accept either one.</p>
     <p data-chrome data-independant class="mt-1 text-xs font-medium text-navy-600">{ui.independent}</p>
   </header>
-  <div data-outil class="mb-4"><Tool tool={{ kind: 'states', props: { state: 'Pennsylvania' } }} primary={true} seedKey="home" /></div>
+  <div data-outil id="calculator" class="mb-4 scroll-mt-20"><Tool tool={{ kind: 'states', props: { state: 'Pennsylvania' } }} primary={true} seedKey="home" /></div>
   <Clamp text={resume} id="clamp-home" lang={lang} class="mb-3" />
   <p class="mb-8 text-sm text-navy-600">State texts, fees and exam rules checked on <time datetime={LAST_UPDATED}>{displayDate(LAST_UPDATED, 'en-US')}</time> · {AUTHOR_NAME} · <a href={route('method', lang)} class="underline hover:text-navy-900">How we read the laws</a> · <a href={route('about', lang)} class="underline hover:text-navy-900">About this site</a></p>
 
   <div class="prose prose-slate max-w-none">
     <h2>The seven state texts and their dates</h2>
     <p>Most articles still say that only New York and New Jersey require certification. That was true around 2015. Since then Connecticut, Tennessee, Pennsylvania, Delaware and Minnesota have passed their own laws. We read each one on the legislature or health department site and give the date it took effect, not the date it was introduced.</p>
-    <Fragment set:html={h.stateTable(`Texts read on ${h.read}. The New Jersey date is the last amendment of a rule whose duty is older.`)} />
-    <p>Each state name links to a page with the text in plain words, who is covered, who is exempt, and a calculator that turns your month of hire into a deadline. The <Fragment set:html={a('sterile-processing-certification-by-state', 'comparison page')} /> lays the seven side by side, and the <Fragment set:html={a('states-without-a-certification-law', 'page on the other states')} /> lists the {h.others.length} jurisdictions without a text and the bills that failed, such as Florida's Senate Bill 1034, which died in committee in March 2026.</p>
+    <Fragment set:html={h.stateTable(`Texts read on ${h.read}. For New Jersey, the date is the rule's last update; the duty itself is older.`)} />
+    <p>Each state name links to a page with the text in plain words, who is covered, who is exempt, and a calculator that turns your month of hire into a deadline. The <Fragment set:html={a('sterile-processing-certification-by-state', 'comparison page')} /> lays the seven side by side, and the <Fragment set:html={a('states-without-a-certification-law', 'page on the other states')} /> lists the other {h.others.length - 1} states and DC, which have no text, and the bills that failed, such as Florida's Senate Bill 1034, which died in committee in March 2026.</p>
 
     <h2>What a sterile processing technician does</h2>
     <p>The work follows reusable instruments around a closed loop. Soiled trays come back from the operating rooms to the decontamination area, where technicians in protective equipment clean them by hand and in washers and ultrasonic cleaners. In the clean preparation area, each instrument is inspected under light and magnification, tested, assembled into its set from a count sheet and wrapped or placed in a rigid container with an internal indicator. Steam or low-temperature sterilizers then run the loads, and the technician reads the cycle record, the chemical indicators and, when required, the biological indicator before release. Sterile items are stored under controlled conditions and delivered on case carts. Every step leaves a record, so a single tray can be traced back to its load and its operator.</p>
-    <p>The job titles vary: sterile processing technician, central service technician, SPD technician, central sterile technician, sterile processing and distribution technician. State laws use "central service technician". The certifications use both terms.</p>
+    <p>The job titles vary: sterile processing technician, central service technician, SPD (sterile processing department) technician, central sterile technician, sterile processing and distribution technician. State laws use "central service technician". The certifications use both terms.</p>
 
     <h2>What the state laws have in common</h2>
     <p>Six of the seven texts follow one model. A hospital or ambulatory surgery center may employ someone as a central service technician only if that person passed a nationally accredited exam and holds a credential such as the CRCST or the CSPDT, was already working as a technician before the law began, or is a student or intern under supervision. A new hire who does not qualify gets a fixed period to obtain the credential, and every technician completes ten hours of continuing education a year. New Jersey is different: it puts the duty in its hospital licensing rule, allows three years from employment and requires the department head to be certified too.</p>
@@ -75,17 +79,17 @@ const resume = `A sterile processing technician, called a central service techni
       ['Full name', C.name, D.name],
       ['To qualify', `${h.num(C.handsOn.total)} hands-on hours, before or within ${C.handsOn.provisionalMonths} months after the exam`, '12 months of work, a course passed with 70, or two other routes'],
       ['When you test', `Any day at a Prometric center, within ${C.windowDays} days of approval`, 'One week per quarter'],
-      ['Exam fee', h.usd(C.fee), `${h.usd(D.feeWeb)} (exam page) or ${h.usd(D.feeBulletin)} (2026 bulletin)`],
-      ['Pass mark', 'Set by standard setting; not published as a count', `Scaled score of ${D.passScaled}`],
+      ['Exam fee', h.usd(C.fee), `${h.usd(D.feeWeb)} (CBSPD exam page; its 2026 bulletin still says ${h.usd(D.feeBulletin)})`],
+      ['Pass mark', 'Not published: you see pass or fail on screen', `Scaled score of ${D.passScaled}`],
       ['2025 pass rate', h.pc(pr.rate, 1), h.pc(prD.rate, 1)],
-      ['Renewal', `Each year: ${C.renewal.ceHours} CE credits and ${h.usd(C.renewal.fee)}`, `Every ${D.certYears} years: ${D.recertPoints} points and ${h.usd(D.recertFee)}`],
+      ['Renewal', `Each year: ${C.renewal.ceHours} continuing education credits and ${h.usd(C.renewal.fee)}`, `Every ${D.certYears} years: ${D.recertPoints} points and ${h.usd(D.recertFee)}`],
       ['Current holders, end of 2025', h.num(h.P.stats.crcst.current), h.num(h.P.stats.cspdt.current)],
     ], `HSPA Certification Handbook (revised January 2026), CRCST page and statistics; CBSPD technician page, 2026 bulletin and statistics; read on ${h.read}.`, ['l', 'l', 'l'])} />
     <p>For most people the choice comes down to two things: what the employer names, and what is practical. With a manager willing to sign hours, the CRCST can be taken soon. With a graded course and no year of work, the CSPDT is open sooner. The <Fragment set:html={a('sterile-processing-technician-certification', 'comparison page')} /> has a calculator that checks which exam you can sit today.</p>
 
     <h2>How to get there, step by step</h2>
     <ol>
-      <li><strong>Find out what your state asks.</strong> Use the finder above. If your state has no text, read the job postings you are aiming at.</li>
+      <li><strong>Find out what your state asks.</strong> Use <a href="#calculator">the state finder at the top of this page</a>. If your state has no text, read the job postings you are aiming at.</li>
       <li><strong>Get into a department.</strong> A trainee job, a school externship or volunteering all count toward HSPA's hours if a manager above you witnesses and signs them.</li>
       <li><strong>Log the {h.num(C.handsOn.total)} hours</strong> in five areas: {areasText}. Or test first and send them within {C.handsOn.provisionalMonths} months as a provisional CRCST.</li>
       <li><strong>Apply and book.</strong> HSPA takes about {C.processingWeeks} weeks to process an application and then gives {C.windowDays} days to sit the test; it advises booking at least 45 days before that ends. CBSPD applications are printed and mailed before a window's deadline.</li>
@@ -101,7 +105,7 @@ const resume = `A sterile processing technician, called a central service techni
     <Fragment set:html={h.outline(`CRCST content outline, read on ${h.read}.`)} />
 
     <h2>After certification</h2>
-    <p>The CRCST is renewed every year with {C.renewal.ceHours} technical continuing education credits and {h.usd(C.renewal.fee)}, by the last day of the month you were certified. Late renewal suspends the credential for a six-week grace period, after which only a new exam restores it. The CSPDT lasts five years and is renewed with {D.recertPoints} points, up to half from work. In six states the law adds ten hours of education a year; the same hours can often serve both. See <Fragment set:html={a('crcst-renewal', 'CRCST renewal')} /> and <Fragment set:html={a('cbspd-recertification', 'CBSPD recertification')} />.</p>
+    <p>The CRCST is renewed every year with {C.renewal.ceHours} technical continuing education credits and {h.usd(C.renewal.fee)}, by the last day of the month you were certified. Late renewal suspends the credential for a six-week grace period, after which only a new exam restores it. The CSPDT lasts five years and is renewed with {D.recertPoints} points, up to half from work. {nCe.charAt(0).toUpperCase() + nCe.slice(1)} of the {nTexts} state texts also ask for ten hours of education a year. That state rule and HSPA's {C.renewal.ceHours} yearly credits are separate, but the same courses can often count for both. See <Fragment set:html={a('crcst-renewal', 'CRCST renewal')} /> and <Fragment set:html={a('cbspd-recertification', 'CBSPD recertification')} />.</p>
     <h2>Every page of the site</h2>
   </div>
   <div class="not-prose mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-3" data-sommaire>

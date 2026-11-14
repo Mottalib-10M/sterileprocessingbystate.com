@@ -99,7 +99,7 @@ export default function Quiz({ exam: e0, mode = 'practice', domain: d0 = null, t
   const shown = reveal ? right : answeredN;
   const status = !answeredN ? 'Pick an answer to start' : !reveal ? `${n - answeredN} question${n - answeredN === 1 ? '' : 's'} left to answer` : right >= target ? 'At or above our study target' : `${target - right} more correct to reach our study target`;
   const tone = !answeredN || !reveal ? 'text-navy-800' : right >= target ? 'text-green-800' : 'text-red-700';
-  const domName = (code: string) => domainsOf(exam).find((d) => d.code === code)?.short ?? code;
+  const domName = (code: string) => domainsOf(exam).find((d) => d.code === code)?.name ?? code;
 
   return (
     <div data-chrome className="not-prose grid gap-5 lg:grid-cols-[minmax(0,1fr)_290px]">
@@ -107,7 +107,7 @@ export default function Quiz({ exam: e0, mode = 'practice', domain: d0 = null, t
         {(pick || (mode === 'practice' && !topic)) && (
           <div className="grid gap-3 sm:grid-cols-2">
             {pick && <SelectField id={`${idPrefix}-exam`} label="Exam" value={exam} onChange={(v) => { const ex = v as ExamId; setExam(ex); setDomain(null); draw(ex, null, seedRef.current); }} options={EXAM_IDS.map((id) => ({ value: id, label: `${LABEL(id)}: ${examOf(id).name.replace(' certification examination', '')}` }))} />}
-            {mode === 'practice' && !topic && <SelectField id={`${idPrefix}-domain`} label="Outline domain" value={domain ?? ''} onChange={(v) => { const d = v || null; setDomain(d); draw(exam, d, seedRef.current); }} options={[{ value: '', label: 'All domains, mixed' }, ...domainsOf(exam).map((d) => ({ value: d.code, label: `${d.code}. ${d.short}` }))]} />}
+            {mode === 'practice' && !topic && <SelectField id={`${idPrefix}-domain`} label="Outline domain" value={domain ?? ''} onChange={(v) => { const d = v || null; setDomain(d); draw(exam, d, seedRef.current); }} options={[{ value: '', label: 'All domains, mixed' }, ...domainsOf(exam).map((d) => ({ value: d.code, label: `${d.code}. ${d.name}` }))]} />}
           </div>
         )}
         <div className="rounded-lg border border-navy-300 bg-white">
@@ -137,7 +137,9 @@ export default function Quiz({ exam: e0, mode = 'practice', domain: d0 = null, t
                 {a !== null && !reveal && <p className="mt-3 text-sm text-navy-700">Answer saved. As on the real exam, the corrections come when you end the test.</p>}
                 <div className="mt-4 flex flex-wrap gap-2">
                   {cur > 0 && <button type="button" onClick={() => setCur(cur - 1)} className="h-12 rounded-lg border border-navy-300 px-4 font-medium text-navy-800 hover:bg-navy-50">Back</button>}
-                  {cur < n - 1 && <button type="button" onClick={() => setCur(cur + 1)} className="h-12 rounded-lg bg-accent-700 px-5 font-semibold text-white hover:bg-accent-800">Next question</button>}
+                  {cur < n - 1 && (a === null
+                    ? <button type="button" onClick={() => setCur(cur + 1)} className="h-12 rounded-lg border border-navy-300 px-4 font-medium text-navy-700 hover:bg-navy-50">Skip this question</button>
+                    : <button type="button" onClick={() => setCur(cur + 1)} className="h-12 rounded-lg bg-accent-700 px-5 font-semibold text-white hover:bg-accent-800">Next question</button>)}
                   {isMock && !done && answeredN > 0 && <button type="button" onClick={() => setDone(true)} className="h-12 rounded-lg border border-accent-700 px-4 font-semibold text-accent-800 hover:bg-accent-50">End and mark the test</button>}
                   <button type="button" onClick={newSet} className="h-12 rounded-lg border border-navy-300 px-4 font-medium text-navy-800 hover:bg-navy-50">{isMock ? 'New mock' : 'New questions'}</button>
                 </div>

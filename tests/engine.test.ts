@@ -60,8 +60,12 @@ describe('rules', () => {
   it('provisional and renewal dates', () => {
     expect(provisional('2027-03-31', false).due).toBe('2027-09-30');
     expect(provisional('2027-03-31', true).due).toBe('2027-11-30');
-    const r = crcstRenewal(3, 2025, 2026);
+    const r = crcstRenewal(3, 2025, '2026-01-15');
     expect(r.due).toBe('2026-03-31'); expect(r.grace).toBe('2026-05-12');
+    // never a due date already past on the reference day
+    expect(crcstRenewal(9, 2025, '2026-11-13').due).toBe('2027-09-30');
+    expect(crcstRenewal(11, 2025, '2026-11-13').due).toBe('2026-11-30');
+    expect(crcstRenewal(4, 2026, '2026-11-13').due).toBe('2027-04-30');
   });
   it('CBSPD points are capped at 50 for work', () => {
     expect(cbspdPoints(5, 0, 0, 30).total).toBe(80);

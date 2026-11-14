@@ -81,10 +81,15 @@ export function provisional(passISO: string, extension: boolean) {
   return { due: extension ? addMonths(base, CRCST.handsOn.extensionMonths) : base, base, extended: extension };
 }
 
-/** CRCST renewal: due by the last day of the anniversary month, six-week grace with the credential suspended. */
-export function crcstRenewal(certMonth: number, certYear: number, nowYear: number) {
+/**
+ * CRCST renewal: due by the last day of the anniversary month, six-week grace with the credential suspended.
+ * The next due date is the first anniversary deadline on or after `nowISO` (testeurs naïfs 2026-11-14:
+ * a certification of September 2025 showed "due September 30, 2026" in November 2026, a date already past).
+ */
+export function crcstRenewal(certMonth: number, certYear: number, nowISO: string) {
   const m = Math.min(12, Math.max(1, Math.round(certMonth)));
-  let y = Math.max(certYear + 1, nowYear);
+  let y = Math.max(certYear + 1, Number(nowISO.slice(0, 4)));
+  if (lastDayOfMonth(y, m) < nowISO) y += 1;
   const due = lastDayOfMonth(y, m);
   const grace = addDays(due, CRCST.renewal.graceWeeks * 7);
   return { due, grace, ce: CRCST.renewal.ceHours, fee: CRCST.renewal.fee, feeMember: CRCST.renewal.feeWithMembership, year: y };

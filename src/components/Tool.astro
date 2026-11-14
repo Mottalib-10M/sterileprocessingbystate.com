@@ -12,8 +12,8 @@ import { CTA_PAGE } from '../lib/mini-specs';
 import { BANK } from '../lib/banks-build';
 import { buildMock, buildPractice, seedOf, type ExamId } from '../lib/engine/exam';
 import type { ToolDef } from '../lib/guide-types';
-interface Props { tool: ToolDef; lang?: Locale; primary?: boolean; idPrefix?: string; seedKey?: string; title?: string }
-const { tool, lang = 'en', primary = false, idPrefix, seedKey = 'home', title } = Astro.props;
+interface Props { tool: ToolDef; lang?: Locale; primary?: boolean; idPrefix?: string; seedKey?: string; title?: string; here?: string }
+const { tool, lang = 'en', primary = false, idPrefix, seedKey = 'home', title, here } = Astro.props;
 const props = (tool.props ?? {}) as Record<string, any>;
 const kind = tool.kind;
 const exam = (props.exam ?? 'crcst') as ExamId;
@@ -33,4 +33,4 @@ const pre = idPrefix ?? (primary ? 'p' : 'm');
 {kind === 'quiz' && <Quiz client:load exam={exam} mode={mode} domain={domain} topic={topic} n={n} pick={false} initial={initial} seed={seed} idPrefix={pre} secondary={!primary} />}
 {kind === 'progress' && <Progress client:load exam={exam} idPrefix={pre} secondary={!primary} />}
 {kind === 'states' && <StateFinder client:load state={String(props.state ?? 'Pennsylvania')} idPrefix={pre} secondary={!primary} />}
-{mini && <MiniSim client:load kind={mini} href={link(CTA_PAGE[mini])} defaults={numDefaults} idPrefix={pre} title={title} locked={locked} />}
+{mini && <MiniSim client:load kind={mini} href={link(CTA_PAGE[mini])} defaults={numDefaults} idPrefix={pre} title={title} locked={locked} here={here} />}

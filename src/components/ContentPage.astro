@@ -44,12 +44,12 @@ for (let i = 0; i < parts.length; i += 3) { chunks.push({ html: parts[i] }); if 
       <p class="mt-2 text-base text-navy-700 sm:text-lg">{T.intro}</p>
       <p data-chrome data-independant class="mt-1 text-xs font-medium text-navy-600">{ui.independent}</p>
     </header>
-    {page.tool && <div data-outil class="mb-4"><Tool tool={page.tool} primary={true} seedKey={page.id} /></div>}
+    {page.tool && <div data-outil id="calculator" class="mb-4 scroll-mt-20"><Tool tool={page.tool} primary={true} seedKey={page.id} here={path} /></div>}
     <Clamp text={T.resume(h)} id={`clamp-${page.id}`} lang={lang} class="mb-3" />
-    {page.mini && <div class="mb-4"><Tool tool={page.mini} idPrefix="g" seedKey={`${page.id}-mini`} title={(page.mini.props as any)?.title} /></div>}
+    {page.mini && <div id="calculator-2" class="mb-4 scroll-mt-20"><Tool tool={page.mini} idPrefix="g" seedKey={`${page.id}-mini`} title={(page.mini.props as any)?.title} here={path} /></div>}
     <p class="mb-8 text-sm text-navy-600">{ui.reviewedBy} <a href={route('about', lang)} class="underline hover:text-navy-900">{AUTHOR_NAME}</a> · <a href={route('editorial', lang)} class="underline hover:text-navy-900">{ui.editorialPolicy}</a> · <a href={route('method', lang)} class="underline hover:text-navy-900">{label('method')}</a></p>
     <div class="prose prose-slate max-w-none">
-      {chunks.map((c, i) => c.html !== undefined ? <Fragment set:html={c.html} /> : <div class="not-prose my-6"><Tool tool={c.tool!} idPrefix={`s${i}`} seedKey={`${page.id}-s${i}`} title={(c.tool!.props as any)?.title} /></div>)}
+      {chunks.map((c, i) => c.html !== undefined ? <Fragment set:html={c.html} /> : <div class="not-prose my-6"><Tool tool={c.tool!} idPrefix={`s${i}`} seedKey={`${page.id}-s${i}`} title={(c.tool!.props as any)?.title} here={path} /></div>)}
     </div>
   </article>
 </PageLayout>

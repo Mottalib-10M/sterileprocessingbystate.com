@@ -9,8 +9,8 @@ export default definePage({
     slug: 'new-york-central-service-technician-law', nav: 'New York', card: 'Public Health Law § 2824 since 2015: 18 months after hire, 10 hours of education a year, the hiring exception.',
     title: 'New York Central Service Technician Law: § 2824 Rules',
     description: 'New York central service technician law, Public Health Law § 2824: in force since January 1, 2015, 18 months to certify after hire and 10 CE hours a year.',
-    h1: 'New York central service technician law: what § 2824 asks of you',
-    intro: 'The New York central service technician law gives a new hire 18 months to earn the CRCST or CSPDT: enter your month of hire above to get your date.',
+    h1: 'New York central service technician law: what it asks of you',
+    intro: 'The New York central service technician law gives a new hire 18 months to earn the CRCST (Certified Registered Central Service Technician) or the CSPDT (Certified Sterile Processing and Distribution Technician). Enter your month of hire to get your date.',
     resume: (h) => `New York was one of the first states to put sterile processing certification into statute. Public Health Law § 2824, added by Chapter 177 of the Laws of 2013, has applied since ${h.date(h.state('new-york').effective)}, as the Department of Health told hospital chief executives in a letter of January 20, 2015. A person may work as a central service technician in a general hospital, or in a diagnostic and treatment center authorized for ambulatory surgery, only if one of three conditions is met: they passed a nationally accredited central service exam and hold the CRCST, the CSPDT or a substantially equivalent credential; they worked as a technician for a cumulative year in the four years before 2015; or they are a supervised student or intern. Someone hired without the credential has ${h.state('new-york').graceMonths} months from the date of hire to obtain it, and every technician completes ${h.state('new-york').ceHours} hours of continuing education each year.`,
     faqs: (h) => [
       { q: 'How long do I have to get certified after being hired in New York?', a: `${h.state('new-york').graceMonths} months from your date of hire under subdivision 3 of § 2824. Hired on March 1, 2027, you would need the credential by ${h.certifyBy('new-york', '2027-03-01')}. The date counts from the first day of employment, so check it on your offer letter and plan the exam months before the end.` },
@@ -26,6 +26,6 @@ ${h.table(['Rule', 'What § 2824 says'], [['Who is covered', 'Anyone who deconta
 <h2>Verification between employers</h2>
 <p>A facility has to confirm the dates of employment or contract of a technician when another facility, or the technician, asks. Keep a copy of that letter: it is what proves the grandfathered status if you change hospitals. New York also has a separate § 2824 on surgical technologists, so check which section a document cites.</p>
 <h2>Keeping it up</h2>
-<p>The ten hours of yearly education fit inside the twelve credits HSPA asks for the ${h.a('crcst-renewal', 'CRCST renewal')}, so one set of credits can serve both if the topics relate to central service work. The calculator below gives your next CRCST due date.</p>`,
+<p>The ten hours of yearly education fit inside the twelve credits HSPA, the Healthcare Sterile Processing Association, asks for the ${h.a('crcst-renewal', 'CRCST renewal')}, so one set of credits can serve both if the topics relate to central service work. ${h.calc2('The second calculator on this page')} gives your next CRCST due date.</p>`,
   },
 });
